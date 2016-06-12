@@ -1,7 +1,77 @@
 <div ng-controller="SearchCtrl">
-  <ul>
-  <li ng-repeat="pet in petfinderReturn">
-    <h5>{{pet.name.$t}}</h5>
-  </li>
-  </ul>
+
+  <div ng-show="isSearching">
+    <h2>Find a Pet</h2>
+    <div class="row">
+      <div input-field class="col s12 l4 offset-l4">
+        <select ng-model="select.value" material-select>
+          <option value="" disabled selected>Select Pet Type (Required)</option>
+          <option ng-repeat="value in select.choices">{{value}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div input-field class="col s12 l4">
+        <select ng-model="sizes.value" material-select multiple>
+            <option value="" disabled selected>Size (Optional)</option>
+            <option ng-repeat="value in sizes.choices">{{value}}</option>
+        </select>
+      </div>
+
+      <div input-field class="col s12 l4">
+        <select ng-model="ages.value" material-select multiple>
+            <option value="" disabled selected>Age (Optional)</option>
+            <option ng-repeat="value in ages.choices">{{value}}</option>
+        </select>
+      </div>
+
+      <div input-field class="col s12 l4">
+        <select ng-model="genders.value" material-select multiple>
+            <option value="" disabled selected>Gender (Optional)</option>
+            <option ng-repeat="value in genders.choices">{{value}}</option>
+        </select>
+      </div>
+    </div>
+       
+    <div class="col s12 l2">
+      <a class="waves-effect waves-light btn">Search</a>
+    </div>
+
+    </div>
+
+  <div class="row" ng-show="showDogs">
+    <h1>Dogs</h1>
+    <ul>
+      <li ng-repeat="pet in dogs">
+        <div class="col s4">
+          <h5>{{pet.name.$t}}</h5>
+          <img ng-src="{{pet.media.photos.photo[3].$t}}">
+        </div>
+      </li>
+    </ul>
+  </div> 
+
+  <div class="row" ng-show="showCats">
+    <h1>Cats</h1>
+    <ul>
+      <li ng-repeat="pet in cats">
+        <div class="col s4">
+          <h5>{{pet.name.$t}}</h5>
+          <img ng-src="{{pet.media.photos.photo[3].$t}}">
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row" ng-show="showOther">
+    <h1>Other Pets</h1>
+    <ul>
+      <li ng-repeat="pet in other">
+        <div class="col s4">
+          <h5>{{pet.name.$t}}</h5>
+          <img ng-src="{{pet.media.photos.photo[3].$t}}">
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

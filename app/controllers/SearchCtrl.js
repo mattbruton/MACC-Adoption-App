@@ -7,6 +7,32 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
   $scope.cats = [];
   $scope.other = [];
 
+  $scope.isSearching = true;
+  $scope.showDogs = false;
+  $scope.showCats = false;
+  $scope.showOther = false;
+
+  $scope.select = {
+            value: "",
+            choices: ["Dogs", "Cats", "Other"]
+        };
+
+  $scope.sizes = {
+            value: "",
+            choices: ["Small", "Medium", "Large"]
+        };
+
+  $scope.ages = {
+            value: "",
+            choices: ["Baby","Young", "Adult", "Senior"]
+        };
+
+  $scope.genders = {
+            value: "",
+            choices: ["Male", "Female"]
+        };
+
+
   $scope.sortPets = function() {
       $scope.petfinderReturn.forEach(function(pet) {
         if (pet.animal.$t === "Dog") {
@@ -25,12 +51,10 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
   $scope.findPets = function() {
     PetfinderRequest.getPetsFromPetfinder($scope.petfinderReturn)
       .then(function() {
-      })
-      .then(function() {
         $scope.sortPets();
       })
   };
 
   $scope.findPets();
-  
+
 });
