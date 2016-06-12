@@ -7,6 +7,9 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
   $scope.cats = [];
   $scope.other = [];
 
+  $scope.animalsToDisplay = [];
+
+
   $scope.isSearching = true;
   $scope.showDogs = false;
   $scope.showCats = false;
@@ -32,6 +35,11 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
             choices: ["Male", "Female"]
         };
 
+
+  $scope.displayPets = function() {
+    
+    console.log("yer clicking");
+  }
 
   $scope.sortPets = function() {
       $scope.petfinderReturn.forEach(function(pet) {
