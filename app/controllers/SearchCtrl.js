@@ -2,27 +2,27 @@
 
 app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
 
+  /* Unfortunately, Petfinder's API will not let me query specific animal types when selecting a specific
+     shelter. The workaround is uglier than I would like, but I have to pull all animals and then have them
+     sorted based on type, then filter further based on the user's choices. */
+
   $scope.petfinderReturn = [];
-  $scope.dogs = [];
-  $scope.cats = [];
-  $scope.other = [];
 
   $scope.animalsToDisplay = [];
 
+  $scope.showPets = false;
 
   $scope.isSearching = true;
-  $scope.showDogs = false;
-  $scope.showCats = false;
-  $scope.showOther = false;
 
   $scope.select = {
             value: "",
-            choices: ["Dogs", "Cats", "Other"]
+            choices: ["Dog", "Cat", "Other"],
+            words: ["dogs", "cats", "others"]
         };
 
   $scope.sizes = {
             value: "",
-            choices: ["Small", "Medium", "Large"]
+            choices: ["S", "M", "L"]
         };
 
   $scope.ages = {
@@ -32,35 +32,61 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
 
   $scope.genders = {
             value: "",
-            choices: ["Male", "Female"]
+            choices: ["M", "F"]
         };
 
 
   $scope.displayPets = function() {
-    
-    console.log("yer clicking");
+    $scope.animalsToDisplay = [];
+    $scope.petfinderReturn.forEach(function(pet) {
+      if (pet.animal.$t === $scope.select.value) {
+        $scope.animalsToDisplay.push(pet);
+
+        console.log($scope.animalsToDisplay);
+        if ($scope.ages.value !== "") {
+        $scope.filterByAge();
+        }
+        if ($scope.genders.value !== "") {
+        $scope.filterByGender();
+        }
+        if ($scope.sizes.value !== "") {
+        $scope.filterBySize();
+        }
+      }
+      $scope.showPets = true;
+    });
+
+  };
+
+  $scope.filterByAge = function() {
+    $scope.animalsToDisplay.forEach(function(pet) {
+      if (pet.age.$t !== $scope.ages.value) {
+        $scope.animalsToDisplay.pop(pet);
+        console.log($scope.animalsToDisplay);
+      }
+    })
   }
 
-  $scope.sortPets = function() {
-      $scope.petfinderReturn.forEach(function(pet) {
-        if (pet.animal.$t === "Dog") {
-          $scope.dogs.push(pet);   
-        } else if (pet.animal.$t === "Cat") {
-          $scope.cats.push(pet);
-        } else {
-          $scope.other.push(pet);
-        }
-      });
-    console.log($scope.dogs);
-    console.log($scope.cats);
-    console.log($scope.other);
-  };
+  $scope.filterByGender = function() {
+    $scope.animalsToDisplay.forEach(function(pet) {
+      if (pet.sex.$t !== $scope.genders.value) {
+        $scope.animalsToDisplay.pop(pet);
+        console.log($scope.animalsToDisplay);
+      }
+    })
+  }
+
+  $scope.filterBySize = function() {
+    $scope.animalsToDisplay.forEach(function(pet) {
+      if (pet.size.$t !== $scope.sizes.value) {
+        $scope.animalsToDisplay.pop(pet);
+        console.log($scope.animalsToDisplay);
+      }
+    })
+  }
 
   $scope.findPets = function() {
     PetfinderRequest.getPetsFromPetfinder($scope.petfinderReturn)
-      .then(function() {
-        $scope.sortPets();
-      })
   };
 
   $scope.findPets();
