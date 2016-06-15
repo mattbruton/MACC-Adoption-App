@@ -16,8 +16,7 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
 
   $scope.select = {
             value: "",
-            choices: ["Dog", "Cat", "Other"],
-            words: ["dogs", "cats", "others"]
+            choices: ["Dog", "Cat", "Small & Furry"]
         };
 
   $scope.sizes = {
@@ -30,7 +29,7 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
             choices: ["Baby","Young", "Adult", "Senior"]
         };
 
-  $scope.genders = {
+  $scope.sexes = {
             value: "",
             choices: ["M", "F"]
         };
@@ -39,15 +38,15 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
   $scope.displayPets = function() {
     $scope.animalsToDisplay = [];
     $scope.petfinderReturn.forEach(function(pet) {
-      if (pet.animal.$t === $scope.select.value) {
+      if (pet.animal.$t === $scope.select.value && pet.status.$t === "A") {
         $scope.animalsToDisplay.push(pet);
 
         console.log($scope.animalsToDisplay);
         if ($scope.ages.value !== "") {
         $scope.filterByAge();
         }
-        if ($scope.genders.value !== "") {
-        $scope.filterByGender();
+        if ($scope.sexes.value !== "") {
+        $scope.filterBySex();
         }
         if ($scope.sizes.value !== "") {
         $scope.filterBySize();
@@ -67,9 +66,9 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
     })
   }
 
-  $scope.filterByGender = function() {
+  $scope.filterBySex = function() {
     $scope.animalsToDisplay.forEach(function(pet) {
-      if (pet.sex.$t !== $scope.genders.value) {
+      if (pet.sex.$t !== $scope.sexes.value) {
         $scope.animalsToDisplay.pop(pet);
         console.log($scope.animalsToDisplay);
       }

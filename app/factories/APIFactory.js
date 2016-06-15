@@ -11,6 +11,7 @@ app.factory("PetfinderRequest", function($q, $http) {
           Object.keys(animalCollection.petfinder.pets.pet).forEach(function(searchResult) {
             array.push(animalCollection.petfinder.pets.pet[searchResult]);
           });
+          console.log(array );
           resolve(array);
         })
         .error(function(error) {

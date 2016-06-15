@@ -1,4 +1,7 @@
-body {
+@import "partials/nav";
+@import "partials/content";
+@import "partials/search";
+
+body{
   text-align: center;
-  background-color: white;
 }
