@@ -12,11 +12,13 @@
 </head>
 <body ng-app="MaccAdopt">
   
-  <div ng-include="'./partials/nav.html'">
-  </div>
+  <div ng-include="'./partials/nav.html'"></div>
 
-
+  <main>
   <div ng-view></div>
+  </main>
+
+  <footer class="page-footer orange darken-3" ng-include="'./partials/footer.html'"></footer>
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 
