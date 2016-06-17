@@ -1,3 +1,17 @@
+@import "partials/nav";
+@import "partials/content";
+@import "partials/login";
+@import "partials/search";
+@import "partials/footer";
+
+
 body {
-  background-color: white;
-}
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
