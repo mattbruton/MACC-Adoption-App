@@ -34,7 +34,7 @@
     </div>
 
       <div class="col s12 l2" ng-click="displayPets()">
-      <button class="btn waves-effect waves-light" name="action">Search
+      <button class="btn waves-effect waves-light orange darken-3 search-button" name="action">Search
         <i class="fa fa-arrow-right right"></i>
       </button>
       </div>
@@ -43,22 +43,31 @@
     
   
   <div class="row" ng-show="showPets">
-    <h4>Displaying {{animalsToDisplay.length}} Results</h4>
-
     <div class="col s12 l2 offset-l5" ng-click="returnToSearchView()">
-      <button class="btn waves-effect waves-light" name="action"><i class="fa fa-arrow-left left"></i>Back
+      <button class="btn waves-effect waves-light orange darken-3 search-button" name="action"><i class="fa fa-arrow-left left"></i>Back
       </button>
       </div>
+    <h4 class="col s12">Displaying {{animalsToDisplay.length}} Results</h4>
+
+
     <div class="col s12 l12">
     <ul>
       <li ng-repeat="pet in animalsToDisplay">
         <div class="col s12 l4">
-          <h5>{{pet.name.$t}}</h5>
-          <img ng-src="{{pet.media.photos.photo[3].$t}}">
+          <div class="s10 offset-1 grey lighten-4 search-card">
+          
+          <img class="search-result-img"ng-src="{{pet.media.photos.photo[3].$t}}">
+          <h5 class="search-pet-title">{{pet.name.$t}}</h5>
+          </div>
         </div>
       </li>
     </ul>
     </div>
+
+     <div class="col s12 l2 offset-l5" ng-click="returnToSearchView()">
+      <button class="btn waves-effect waves-light orange darken-3 search-button" name="action"><i class="fa fa-arrow-left left"></i>Back
+      </button>
+      </div>
   </div>
 
     </div>
