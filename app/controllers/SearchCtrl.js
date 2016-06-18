@@ -52,6 +52,7 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
         $scope.filterBySize();
         }
       }
+      $scope.isSearching = false;
       $scope.showPets = true;
     });
 
@@ -82,6 +83,11 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
         console.log($scope.animalsToDisplay);
       }
     })
+  }
+
+  $scope.returnToSearchView = function() {
+    $scope.isSearching = true;
+    $scope.showPets = false;
   }
 
   $scope.findPets = function() {

@@ -41,9 +41,15 @@
 
 </div>
     
-
+  
   <div class="row" ng-show="showPets">
     <h4>Displaying {{animalsToDisplay.length}} Results</h4>
+
+    <div class="col s12 l2 offset-l5" ng-click="returnToSearchView()">
+      <button class="btn waves-effect waves-light" name="action"><i class="fa fa-arrow-left left"></i>Back
+      </button>
+      </div>
+    <div class="col s12 l12">
     <ul>
       <li ng-repeat="pet in animalsToDisplay">
         <div class="col s12 l4">
@@ -52,6 +58,7 @@
         </div>
       </li>
     </ul>
+    </div>
   </div>
 
     </div>
