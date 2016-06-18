@@ -1,21 +1,29 @@
 <div class="row login login-content">
-  <div class="col s10 l12 offset-s1">
-    <h2>Log In</h2>
+  <div>
+  <div class="col s12 l2 offset-l5">
+    <h2 class="login-title">Log In</h2>
   </div>
   <div>
-    <div class="col s4 offset-s4 login-input">
-      <label>Email</label>
-      <input type="text" ng-model="account.email">
+    <div class="input-field col s8 l4 offset-l4 offset-s2 login-input">
+      <!-- <label>Email</label> -->
+      <input placeholder="E-mail" type="email" ng-model="account.email">
     </div>
   </div>
   <div>
-    <div class="col s4 offset-s4 login-input">
-      <label>Password</label>
-      <input type="password" ng-model="account.password">
+    <div class="input-field col s8 l4 offset-l4 offset-s2 login-input">
+      <!-- <label>Password</label> -->
+      <input placeholder="Password"type="password" ng-model="account.password">
     </div>
   </div>
-  <div class="col s4 offset-s4">
-    <button ng-click="login()">Login</button>
-    <button ng-click="register()">Register</button>
+  <div class="col s8 offset-s2">
+        <div class="col s12 l2 offset-l5" ng-click="login()">
+          <button class="btn waves-effect waves-light orange darken-3 search-button" name="action">Login
+          </button>
+        </div>
+        <div class="col s12 l2 offset-l5" ng-click="register()">
+          <button class="btn waves-effect waves-light orange darken-3 search-button" name="action">SignUp
+          </button>
+        </div>
+  </div>
   </div>
 </div>
