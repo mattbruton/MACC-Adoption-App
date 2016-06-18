@@ -10,20 +10,22 @@
     </div>
   </div>
   <div>
-    <div class="input-field col s8 l4 offset-l4 offset-s2 login-input">
+    <div class="input-field col s8 offset-s2 l4 offset-l4 login-input">
       <!-- <label>Password</label> -->
       <input placeholder="Password"type="password" ng-model="account.password">
     </div>
   </div>
+  <div class="login-spacer">
   <div class="col s8 offset-s2">
-        <div class="col s12 l2 offset-l5" ng-click="login()">
-          <button class="btn waves-effect waves-light orange darken-3 search-button" name="action">Login
+        <div class="col s12 l2 offset-l3" ng-click="login()">
+          <button class="btn waves-effect waves-light orange darken-3 login-button" name="action">Login
           </button>
         </div>
-        <div class="col s12 l2 offset-l5" ng-click="register()">
-          <button class="btn waves-effect waves-light orange darken-3 search-button" name="action">SignUp
+        <div class="col s12 l2 offset-l2" ng-click="register()">
+          <button class="btn waves-effect waves-light orange darken-3 login-button" name="action">SignUp
           </button>
         </div>
+  </div>
   </div>
   </div>
 </div>

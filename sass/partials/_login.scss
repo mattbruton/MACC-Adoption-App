@@ -2,7 +2,7 @@
 
 .login-content {
   position: relative;
-  top: 135px;
+  top: 70px;
   background-color: $lighter-blue;
 }
 
@@ -15,4 +15,8 @@
 
 .login-title {
   color: $text-color;
+}
+
+.login-button {
+  margin-top: 40px;
 }
