@@ -1,9 +1,9 @@
 <div class="search-content" ng-controller="SearchCtrl">
 
   <div ng-show="isSearching" class="search-height-fix">
-    <h2>Find a Pet</h2>
+    <h2 class="search-heading">Find a Pet</h2>
     <div class="row">
-      <div input-field class="col s12 l4 offset-l4 login-input">
+      <div input-field class="col s10 offset-s1 l4 offset-l4 login-input">
         <select ng-model="select.value" material-select>
           <option value="" disabled selected>Select Pet Type (Required)</option>
           <option ng-repeat="value in select.choices">{{value}}</option>
@@ -11,32 +11,32 @@
       </div>
     </div>
     <div class="row">
-      <div input-field class="col s12 l4 offset-l4 login-input">
+      <div input-field class="col s10 offset-s1 l4 offset-l4 login-input">
         <select ng-model="sizes.value" material-select>
-            <option value="" disabled selected>Size (Optional)</option>
+            <option value="" selected>Size (Optional)</option>
             <option ng-repeat="value in sizes.choices">{{value}}</option>
         </select>
       </div>
       </div>
       <div class="row">
-      <div input-field class="col s12 l4 offset-l4  login-input">
+      <div input-field class="col s10 offset-s1 l4 offset-l4  login-input">
         <select ng-model="ages.value" material-select>
-            <option value="" disabled selected>Age (Optional)</option>
+            <option value="" selected>Age (Optional)</option>
             <option ng-repeat="value in ages.choices">{{value}}</option>
         </select>
       </div>
       </div>
       <div class="row">
-      <div input-field class="col s12 l4 offset-l4 login-input">
+      <div input-field class="col s10 offset-s1 l4 offset-l4 login-input">
         <select ng-model="sexes.value" material-select>
-            <option value="" disabled selected>Sex (Optional)</option>
+            <option value="" selected>Sex (Optional)</option>
             <option ng-repeat="value in sexes.choices">{{value}}</option>
         </select>
       </div>
       </div>
 
-      <div class="col s12 l2" ng-click="displayPets()">
-        <button class="btn waves-effect waves-light orange darken-3 search-button" name="action">Search
+      <div class="col s12 l2">
+        <button ng-click="displayPets()" class="btn waves-effect waves-light orange darken-3 search-button" name="action">Search
           <i class="fa fa-arrow-right right"></i>
         </button>
       </div>
@@ -49,11 +49,11 @@
     
   
   <div class="row" ng-show="showPets">
-    <div class="col s12 l2 offset-l5" ng-click="returnToSearchView()">
-      <button class="btn waves-effect waves-light orange darken-3 search-button" name="action"><i class="fa fa-arrow-left left"></i>Back
+    <div class="col s12 l2 offset-l5">
+      <button ng-click="returnToSearchView()" class="btn waves-effect waves-light orange darken-3 search-button" name="action"><i class="fa fa-arrow-left left"></i>Back
       </button>
       </div>
-    <h4 class="col s12">Displaying {{animalsToDisplay.length}} Results</h4>
+    <h4 class="col s12 search-heading">Displaying {{animalsToDisplay.length}} Results</h4>
 
 
     <div class="col s12 l12">
@@ -70,8 +70,8 @@
     </ul>
     </div>
 
-     <div class="col s12 l2 offset-l5" ng-click="returnToSearchView()">
-      <button class="btn waves-effect waves-light orange darken-3 search-button" name="action"><i class="fa fa-arrow-left left"></i>Back
+     <div class="col s12 l2 offset-l5">
+      <button ng-click="returnToSearchView()" class="btn waves-effect waves-light orange darken-3 search-button" name="action"><i class="fa fa-arrow-left left"></i>Back
       </button>
       </div>
   </div>
