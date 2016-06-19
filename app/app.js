@@ -9,6 +9,10 @@ app.config(function($routeProvider){
       templateUrl: 'partials/carousel.html',
       controller: 'CarouselCtrl'
       }).
+    when('/details/:id',{
+      templateUrl: 'partials/details.html',
+      controller: 'SearchCtrl'
+      }).
     when('/search',{
       templateUrl: 'partials/search.html',
       controller: 'SearchCtrl'
