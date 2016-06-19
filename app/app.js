@@ -3,11 +3,6 @@
 var app = angular.module('MaccAdopt', ['ngRoute', 'ui.materialize', 'angularSimpleSlider'])
   .constant("firebaseURL", `https://nss-matt-fe-capstone.firebaseio.com/`);
 
-// app.config(['slickCarouselConfig', function (slickCarouselConfig) {
-//     slickCarouselConfig.dots = true;
-//     slickCarouselConfig.autoplay = false;
-//   }])
-
 app.config(function($routeProvider){
   $routeProvider.
     when('/',{

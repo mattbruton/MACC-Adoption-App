@@ -8,8 +8,6 @@ app.controller("LoginCtrl", function($scope, $rootScope, $location, AuthFactory,
     password: ""
   };
 
-  // console.log($location.path());
-
   if ($location.path() === "/logout") {
     ref.unauth();
     $rootScope.isActive = false;
