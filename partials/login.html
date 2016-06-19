@@ -6,7 +6,7 @@
   <div>
     <div class="input-field col s8 l4 offset-l4 offset-s2 login-input">
       <!-- <label>Email</label> -->
-      <input placeholder="E-mail" type="email" ng-model="account.email">
+      <input placeholder="E-mail" type="email" ng-model="account.email" autofocus>
     </div>
   </div>
   <div>
@@ -16,13 +16,14 @@
     </div>
   </div>
   <div class="login-spacer">
-  <div class="col s8 offset-s2">
-        <div class="col s12 l2 offset-l3">
-          <button ng-click="login()" class="btn waves-effect waves-light orange darken-3 login-button" name="action">Login
+  <div class="col s12">
+        <div class="col s12 l12">
+          <button ng-click="login()" class="col l2 offset-l5 s8 offset-s2 btn waves-effect waves-light orange darken-3 login-button" name="action">Login
           </button>
         </div>
-        <div class="col s12 l2 offset-l2">
-          <button ng-click="register()" class="btn waves-effect waves-light orange darken-3 login-button" name="action">SignUp
+        <div class="col s12 l12">
+          <p class="register-text">New User?</p>
+          <button ng-click="register()" class="col l2 offset-l5 s8 offset-s2 btn waves-effect waves-light orange darken-3 register-button" name="action">Register
           </button>
         </div>
   </div>
