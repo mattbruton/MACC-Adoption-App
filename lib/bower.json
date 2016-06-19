@@ -1,0 +1,20 @@
+{
+  "name": "lib",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "MATT BRUTON <the.bruton@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mattbruton/MACC-Adoption-App",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-slick-carousel": "^3.1.5"
+  }
+}

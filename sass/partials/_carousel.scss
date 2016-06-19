@@ -1,0 +1,17 @@
+@import "../modules/color";
+
+.carousel-content {
+  position: relative;
+  top: 135px;
+  background-color: $lighter-blue;
+}
+
+.carousel img {
+    min-width: 100%;
+    height:auto;
+}
+
+
+.slider-news {
+  margin-left: 40%;
+}

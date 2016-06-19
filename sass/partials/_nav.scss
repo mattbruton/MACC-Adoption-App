@@ -19,7 +19,13 @@ nav {
   height: 15%;
 }
 
-nav ul a {
+nav .button-collapse i {
+  font-size: 3.5rem;
+  margin-left: 30px;
+  margin-top: -20px;
+}
+
+.nav-link {
   color: $main-orange;
   font-size: 1.25rem;
   max-height: 55px;
@@ -29,7 +35,7 @@ nav ul a {
   border-top-left-radius: 10px;
 }
 
-nav ul a:hover {
+.nav-link:hover {
   color: $nav-grey;
   background-color: $main-orange;
   border-top-right-radius: 10px;
@@ -41,6 +47,27 @@ nav ul a:hover {
 
 .side-nav {
   a {
+    color: $main-orange;
+  }
+}
+
+.paw {
+  font-size: 34px;
+  min-width: 75px;
+  margin: 50px 15px 0px 10px;
+}
+
+.paw:hover {
+  margin: 51px 15px 0px 10px;
+}
+
+.dropdown-content {
+  margin: 110px 0px 25px -3px;
+  border: 2px solid $main-orange;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  li a {
     color: $main-orange;
   }
 }
