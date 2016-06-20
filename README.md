@@ -9,7 +9,7 @@ MACC Adoption App
 
 
 ## Goals
--To improve overall presentation, and hopefully, make adoption of available animals at MACC easier on staff and users of this project.
+1. To improve overall presentation, and hopefully, make adoption of available animals at MACC easier on staff and users of this project.
 
 ## Installation
 
