@@ -67,31 +67,31 @@
       </div>
       <div class="standard-view">
          <div class="selected-pet">
-          <div class="col l6 offset-l3">
+          <div class="col m6 offset-m3">
             <h3>Hi, I am {{selectedPet[0].name.$t}}</h3>
             <h5>I can't wait to meet you!</h5>
             </div>
             
          <div class="selected-pet-card row">
 
-            <div class="col l9 search-pet-img">
+            <div class="col m9 search-pet-img">
               <img ng-src="{{selectedPet[0].media.photos.photo[3].$t}}">
             </div>
-            <div class="col l3 pull-l2">
+            <div class="col m3 pull-m2">
             <div class="row">
-            <div class="col s12 l12">
+            <div class="col s12 m12">
                <button ng-show="isActive" ng-click="returnToResults()" class="col s8 offset-s2 btn waves-effect waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-heart" aria-hidden="true"></i>
                </button>
             </div>
 
-            <div class="col s12 l12">
+            <div class="col s12 m12">
                <button ng-click="returnToResults()" class="col s8 offset-s2 btn waves-effect waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-arrow-left left"></i>Back
                </button>
             </div>
              </div>
             </div>
 
-            <div class="col l10 offset-l1 search-pet-bio">
+            <div class="col m10 offset-m1 search-pet-bio">
               <h5>Age: {{selectedPet[0].age.$t}}</h5>
               <h5>Size: {{selectedPet[0].size.$t}}</h5>
               <h5>Breed: {{selectedPet[0].breeds.breed.$t}}</h5>
