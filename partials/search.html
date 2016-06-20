@@ -1,80 +1,135 @@
 <div class="search-content" ng-controller="SearchCtrl">
-
-  <div ng-show="isSearching" class="search-height-fix">
-    <h2 class="search-heading">Find a Pet</h2>
-    <div class="row">
-      <div input-field class="col s10 offset-s1 l4 offset-l4 login-input">
-        <select ng-model="select.value" material-select>
-          <option value="" disabled selected>Select Pet Type (Required)</option>
-          <option ng-repeat="value in select.choices">{{value}}</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div input-field class="col s10 offset-s1 l4 offset-l4 login-input">
-        <select ng-model="sizes.value" material-select>
-            <option value="" selected>Size (Optional)</option>
-            <option ng-repeat="value in sizes.choices">{{value}}</option>
-        </select>
-      </div>
+   <div ng-show="isSearching" class="search-height-fix">
+      <h2 class="search-heading">Find a Pet</h2>
+      <div class="row">
+         <div input-field class="col s10 offset-s1 l4 offset-l4 login-input">
+            <select ng-model="select.value" material-select>
+               <option value="" disabled selected>Select Pet Type (Required)</option>
+               <option ng-repeat="value in select.choices">{{value}}</option>
+            </select>
+         </div>
       </div>
       <div class="row">
-      <div input-field class="col s10 offset-s1 l4 offset-l4  login-input">
-        <select ng-model="ages.value" material-select>
-            <option value="" selected>Age (Optional)</option>
-            <option ng-repeat="value in ages.choices">{{value}}</option>
-        </select>
-      </div>
+         <div input-field class="col s10 offset-s1 l4 offset-l4 login-input">
+            <select ng-model="sizes.value" material-select>
+               <option value="" selected>Size (Optional)</option>
+               <option ng-repeat="value in sizes.choices">{{value}}</option>
+            </select>
+         </div>
       </div>
       <div class="row">
-      <div input-field class="col s10 offset-s1 l4 offset-l4 login-input">
-        <select ng-model="sexes.value" material-select>
-            <option value="" selected>Sex (Optional)</option>
-            <option ng-repeat="value in sexes.choices">{{value}}</option>
-        </select>
+         <div input-field class="col s10 offset-s1 l4 offset-l4  login-input">
+            <select ng-model="ages.value" material-select>
+               <option value="" selected>Age (Optional)</option>
+               <option ng-repeat="value in ages.choices">{{value}}</option>
+            </select>
+         </div>
       </div>
+      <div class="row">
+         <div input-field class="col s10 offset-s1 l4 offset-l4 login-input">
+            <select ng-model="sexes.value" material-select>
+               <option value="" selected>Sex (Optional)</option>
+               <option ng-repeat="value in sexes.choices">{{value}}</option>
+            </select>
+         </div>
       </div>
-
-      <div class="col s12 l2">
-        <button ng-click="displayPets()" class="btn waves-effect waves-light orange darken-3 search-button" name="action">Search
-          <i class="fa fa-arrow-right right"></i>
-        </button>
+      <div class="row">
+         <div class="col s12 l2 offset-l5">
+            <button ng-click="displayPets()" class="col s8 offset-s2 btn waves-effect waves-light orange darken-3 search-button" name="action">Search
+            <i class="fa fa-arrow-right right"></i>
+            </button>
+         </div>
       </div>
-      
-    </div>
-
-      
-
-
-    
-  
-  <div class="row" ng-show="showPets">
-    <div class="col s12 l2 offset-l5">
-      <button ng-click="returnToSearchView()" class="btn waves-effect waves-light orange darken-3 search-button" name="action"><i class="fa fa-arrow-left left"></i>Back
-      </button>
+   </div>
+   <div ng-show="petSelected">
+      <div class="mobile-view">
+         <div class="selected-pet">
+            <h3>Hi, I am {{selectedPet[0].name.$t}}</h3>
+            <h5>I can't wait to meet you!</h5>
+            <img ng-src="{{selectedPet[0].media.photos.photo[3].$t}}">
+            <h5>Age: {{selectedPet[0].age.$t}}</h5>
+            <h5>Size: {{selectedPet[0].size.$t}}</h5>
+            <h5>Breed: {{selectedPet[0].breeds.breed.$t}}</h5>
+            <h5>Shelter ID: {{selectedPet[0].shelterPetId.$t}}</h5>
+            <h5>Sex: {{selectedPet[0].sex.$t}}</h5>
+         </div>
+         <div class="row">
+            <div class="col s12 l2 offset-l5">
+               <button ng-show="isActive" ng-click="returnToResults()" class="col s8 offset-s2 btn waves-effect waves-light orange darken-3 selected-pet-button" name="action"><i class="fa fa-heart" aria-hidden="true"></i>
+               </button>
+            </div>
+            <div class="col s12 l2 offset-l5">
+               <button ng-click="returnToResults()" class="col s8 offset-s2 btn waves-effect waves-light orange darken-3 selected-pet-button" name="action"><i class="fa fa-arrow-left left"></i>Back
+               </button>
+            </div>
+         </div>
+         <footer class="page-footer orange darken-3" ng-show="!showPets" ng-include="'./partials/footer.html'"></footer>
       </div>
-    <h4 class="col s12 search-heading">Displaying {{animalsToDisplay.length}} Results</h4>
+      <div class="standard-view">
+         <div class="selected-pet">
+          <div class="col m6 offset-m3">
+            <h3>Hi, I am {{selectedPet[0].name.$t}}</h3>
+            <h5>I can't wait to meet you!</h5>
+            </div>
+            
+         <div class="selected-pet-card row">
 
+            <div class="col m9 search-pet-img">
+              <img ng-src="{{selectedPet[0].media.photos.photo[3].$t}}">
+            </div>
+            <div class="col m3 pull-m2">
+            <div class="row">
+            <div class="col s12 m12">
+               <button ng-show="isActive" ng-click="returnToResults()" class="col s8 offset-s2 btn waves-effect waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-heart" aria-hidden="true"></i>
+               </button>
+            </div>
 
-    <div class="col s12 l12">
-    <ul>
-      <li ng-repeat="pet in animalsToDisplay">
-        <div class="col s12 l4">
-          <div class="s10 offset-1 grey lighten-4 search-card">
-          
-          <img class="search-result-img"ng-src="{{pet.media.photos.photo[3].$t}}">
-          <h5 class="search-pet-title">{{pet.name.$t}}</h5>
-          </div>
-        </div>
-      </li>
-    </ul>
-    </div>
+            <div class="col s12 m12">
+               <button ng-click="returnToResults()" class="col s8 offset-s2 btn waves-effect waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-arrow-left left"></i>Back
+               </button>
+            </div>
+             </div>
+            </div>
 
-     <div class="col s12 l2 offset-l5">
-      <button ng-click="returnToSearchView()" class="btn waves-effect waves-light orange darken-3 search-button" name="action"><i class="fa fa-arrow-left left"></i>Back
-      </button>
+            <div class="col m10 offset-m1 search-pet-bio">
+              <h5>Age: {{selectedPet[0].age.$t}}</h5>
+              <h5>Size: {{selectedPet[0].size.$t}}</h5>
+              <h5>Breed: {{selectedPet[0].breeds.breed.$t}}</h5>
+              <h5>Shelter ID: {{selectedPet[0].shelterPetId.$t}}</h5>
+              <h5>Sex: {{selectedPet[0].sex.$t}}</h5>
+            </div>
+
+         </div>
+         
+         </div>
+         <footer class="page-footer orange darken-3" ng-show="!showPets" ng-include="'./partials/footer.html'"></footer>
+
       </div>
-  </div>
-  <footer class="page-footer orange darken-3" ng-show="showPets" ng-include="'./partials/footer.html'"></footer>
+   </div>
+   <div class="row" ng-show="showPets">
+      <div class="col s12 l2 offset-l5">
+         <button ng-click="returnToSearchView()" class="col s8 offset-s2 btn waves-effect waves-light orange darken-3 search-button" name="action"><i class="fa fa-arrow-left left"></i>Back
+         </button>
+      </div>
+      <h4 class="col s12 search-heading">Displaying {{animalsToDisplay.length}} Results</h4>
+      <div class="col s12 l12">
+         <ul>
+            <li ng-repeat="pet in animalsToDisplay">
+               <div class="col s12 l4">
+                  <div id={{pet.shelterPetId.$t}} ng-click="selectPet(pet.shelterPetId.$t)">
+                     <div class="s10 offset-1 grey lighten-4 search-card">
+                        <img class="search-result-img"ng-src="{{pet.media.photos.photo[3].$t}}">
+                        <h5 class="search-pet-title">{{pet.name.$t}}</h5>
+                     </div>
+                  </div>
+               </div>
+            </li>
+         </ul>
+      </div>
+      <div class="col s12 l2 offset-l5">
+         <button ng-click="returnToSearchView()" class="col s8 offset-s2 btn waves-effect waves-light orange darken-3 search-button" name="action"><i class="fa fa-arrow-left left"></i>Back
+         </button>
+      </div>
+   </div>
+   <footer class="page-footer orange darken-3" ng-show="showPets" ng-include="'./partials/footer.html'"></footer>
 </div>
-

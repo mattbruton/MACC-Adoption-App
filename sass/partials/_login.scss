@@ -20,4 +20,15 @@
 
 .login-button {
   margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.register-button {
+  margin-top: -10px;
+}
+
+.register-text {
+  color: $text-color;
+  font-size: 12px;
+  font-family: 'Work Sans', sans-serif;
 }

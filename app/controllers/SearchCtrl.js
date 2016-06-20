@@ -1,18 +1,24 @@
 "use strict";
 
-app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
+app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $routeParams, $rootScope) {
 
   /* Unfortunately, Petfinder's API will not let me query specific animal types when selecting a specific
      shelter. The workaround is uglier than I would like, but I have to pull all animals and then have them
      sorted based on type, then filter further based on the user's choices. */
 
+
+
   $scope.petfinderReturn = [];
 
   $scope.animalsToDisplay = [];
 
+  $rootScope.selectedPet = [];
+
   $scope.showPets = false;
 
   $scope.isSearching = true;
+
+  $scope.petSelected = false;
 
   $scope.select = {
             value: "",
@@ -58,6 +64,22 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
 
   };
 
+  $scope.selectPet = function(id) {
+    $scope.animalsToDisplay.forEach(function(pet) {
+      if (pet.shelterPetId.$t === id) {
+        $rootScope.selectedPet = [];
+        $rootScope.selectedPet.push(pet);
+        $scope.petSelected = true;
+        $scope.showPets = false;
+        $scope.isSearching = false;
+        console.log($rootScope.selectedPet)
+        // .then(function () {
+        //         $location.url("/details/pet.shelterPetId.$t");
+        //       })
+      }
+    })
+  }
+
   $scope.filterByAge = function() {
     $scope.animalsToDisplay.forEach(function(pet) {
       if (pet.age.$t !== $scope.ages.value) {
@@ -88,6 +110,12 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location) {
   $scope.returnToSearchView = function() {
     $scope.isSearching = true;
     $scope.showPets = false;
+  }
+
+  $scope.returnToResults = function() {
+    $scope.isSearching = false;
+    $scope.petSelected = false;
+    $scope.showPets = true;
   }
 
   $scope.findPets = function() {
