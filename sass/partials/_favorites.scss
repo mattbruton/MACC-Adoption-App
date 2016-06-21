@@ -1,0 +1,13 @@
+@import "../modules/color";
+
+.fav-content {
+  position: relative;
+  top: 70px;
+  background-color: $lighter-blue;
+}
+
+.fav-img {
+  border-radius: 10px;
+  width: 10%;
+  height: 10%;
+}

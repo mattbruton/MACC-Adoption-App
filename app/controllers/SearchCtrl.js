@@ -72,13 +72,13 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
         $scope.petSelected = true;
         $scope.showPets = false;
         $scope.isSearching = false;
-        console.log($rootScope.selectedPet)
+        console.log($rootScope.selectedPet);
         // .then(function () {
         //         $location.url("/details/pet.shelterPetId.$t");
         //       })
       }
-    })
-  }
+    });
+  };
 
   $scope.filterByAge = function() {
     $scope.animalsToDisplay.forEach(function(pet) {
@@ -86,8 +86,8 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
         $scope.animalsToDisplay.pop(pet);
         console.log($scope.animalsToDisplay);
       }
-    })
-  }
+    });
+  };
 
   $scope.filterBySex = function() {
     $scope.animalsToDisplay.forEach(function(pet) {
@@ -95,8 +95,8 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
         $scope.animalsToDisplay.pop(pet);
         console.log($scope.animalsToDisplay);
       }
-    })
-  }
+    });
+  };
 
   $scope.filterBySize = function() {
     $scope.animalsToDisplay.forEach(function(pet) {
@@ -104,22 +104,22 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
         $scope.animalsToDisplay.pop(pet);
         console.log($scope.animalsToDisplay);
       }
-    })
-  }
+    });
+  };
 
   $scope.returnToSearchView = function() {
     $scope.isSearching = true;
     $scope.showPets = false;
-  }
+  };
 
   $scope.returnToResults = function() {
     $scope.isSearching = false;
     $scope.petSelected = false;
     $scope.showPets = true;
-  }
+  };
 
   $scope.findPets = function() {
-    PetfinderRequest.getPetsFromPetfinder($scope.petfinderReturn)
+    PetfinderRequest.getPetsFromPetfinder($scope.petfinderReturn);
   };
 
   $scope.findPets();
