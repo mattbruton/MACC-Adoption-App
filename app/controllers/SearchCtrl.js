@@ -40,6 +40,18 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
             choices: ["M", "F"]
         };
 
+  $scope.newFavorite = {
+        name: "",
+        sex:"",
+        breed: "",
+        size: "",
+        petShelterId: "",
+        animal:"",
+        img: "",
+        age: "",
+        uid:""
+    };
+
 
   $scope.displayPets = function() {
     $scope.animalsToDisplay = [];
@@ -73,9 +85,6 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
         $scope.showPets = false;
         $scope.isSearching = false;
         console.log($rootScope.selectedPet);
-        // .then(function () {
-        //         $location.url("/details/pet.shelterPetId.$t");
-        //       })
       }
     });
   };
@@ -120,6 +129,13 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
 
   $scope.findPets = function() {
     PetfinderRequest.getPetsFromPetfinder($scope.petfinderReturn);
+  };
+
+  $scope.addNewFavorite = function() {
+    $scope.newFavorite = $rootScope.selectedPet;
+    PetfinderRequest.postNewFavorite($scope.newFavorite)
+      .then(function successCallback(response) {
+      });
   };
 
   $scope.findPets();

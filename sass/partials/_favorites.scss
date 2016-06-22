@@ -7,7 +7,27 @@
 }
 
 .fav-img {
+  
+  border: 3px solid $background-blue;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  position: absolute;
+  overflow: hidden;
+  left: 15px;
+  top: 3px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.fav-collection {
+  background-color: $nav-grey;
   border-radius: 10px;
-  width: 10%;
-  height: 10%;
+}
+
+.fav-card {
+  border-bottom: 1px solid $main-orange;
+  width: 80%;
+  margin:auto;
 }

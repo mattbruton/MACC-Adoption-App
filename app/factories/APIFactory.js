@@ -25,16 +25,16 @@ var postNewFavorite = function(newFavorite){
         console.log("user", user);
         return $q(function(resolve, reject) {
             $http.post(
-                firebaseURL + "favorites.json",
+                `${firebaseURL}favorites.json`,
                 JSON.stringify({
-                    animal: newFavorite.animal,
-                    petShelterId: newFavorite.petShelterId,
-                    size: newFavorite.size,
-                    sex: newFavorite.sex,
-                    name: newFavorite.name,
-                    breed: newFavorite.breed,
-                    age: newFavorite.age,
-                    img: newFavorite.img,
+                    animal: newFavorite[0].animal.$t,
+                    shelterPetId: newFavorite[0].shelterPetId.$t,
+                    size: newFavorite[0].size.$t,
+                    sex: newFavorite[0].sex.$t,
+                    name: newFavorite[0].name.$t,
+                    breed: newFavorite[0].breeds.breed.$t,
+                    age: newFavorite[0].age.$t,
+                    img: newFavorite[0].media.photos.photo[2].$t,
                     uid: user.uid
                 })
             )
@@ -68,6 +68,8 @@ var postNewFavorite = function(newFavorite){
                 });
         });
     };
+
+
 
   return {
     getPetsFromPetfinder: getPetsFromPetfinder,

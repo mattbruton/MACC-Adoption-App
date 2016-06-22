@@ -10,9 +10,6 @@ app.controller("FavCtrl", function($scope, PetfinderRequest) {
     console.log(data);
     })
   };
-   
-    
-  
     
   $scope.displayFavorites();
 
