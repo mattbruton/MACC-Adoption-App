@@ -69,12 +69,22 @@ var postNewFavorite = function(newFavorite){
         });
     };
 
+    var deleteFavorite = function(favoriteId) {
+        return $q(function(resolve, reject) {
+            $http
+                .delete(`${firebaseURL}favorites/${favoriteId}.json`)
+                .success(function(objectFromFirebase) {
+                    resolve(objectFromFirebase);
+                });
+        });
+    };
 
 
   return {
     getPetsFromPetfinder: getPetsFromPetfinder,
     postNewFavorite: postNewFavorite,
-    getFavoritePets:getFavoritePets
+    getFavoritePets: getFavoritePets,
+    deleteFavorite: deleteFavorite
   };
 
 });

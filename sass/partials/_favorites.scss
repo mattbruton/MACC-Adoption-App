@@ -5,6 +5,9 @@
   top: 70px;
   background-color: $lighter-blue;
 }
+.fav-title {
+  font-family: 'Work Sans', sans-serif;
+}
 
 .fav-img {
   
@@ -14,20 +17,45 @@
   border-radius: 50%;
   position: absolute;
   overflow: hidden;
-  left: 15px;
-  top: 3px;
+  left: 33px;
+  top: 20px;
   display: inline-block;
   vertical-align: middle;
 }
 
-
-.fav-collection {
-  background-color: $nav-grey;
-  border-radius: 10px;
+.fav-btn {
+    position: absolute;
+    top: 20%;
+    left: 82%;
+    cursor: pointer;
+    display: initial;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    will-change: opacity, transform;
+    transition: all .3s ease-out;
 }
 
 .fav-card {
   border-bottom: 1px solid $main-orange;
   width: 80%;
   margin:auto;
+}
+
+.fav-h2 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 3.56rem;
+  line-height: 110%;
+  margin: 1.78rem 3rem 1.424rem 0;
+}
+
+.fav-collection {
+  background-color: $lighter-orange;
+  border-radius: 10px;
+  margin-bottom: 40px;
 }

@@ -1,15 +1,19 @@
 <div class="fav-content col s10 offset-s1">
   <div class="row">
-  <h3>Favorite Pets</h3>
+  <h2 class="fav-title">Favorite Pets</h2>
   <div class="fav-collection col l6 offset-l3">
 
   <ul class="collection">
     <li class="collection-item avatar" ng-repeat="pet in favoritePets">
       <img ng-src={{pet.img}} alt="" class="fav-img">
-      <span class="title">Title</span>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+      <span class="title"><h2 class="fav-h2">{{pet.name}}</h2></span>
+      <button ng-click="removeFromFavorites(pet.id)" class="fav-btn btn waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-heart-o"></i>
+               </button>
     </li>
   </ul>
   </div>
   </div>
+  
+  <footer class="footer-spacing orange darken-3" ng-show="!showPets" ng-include="'./partials/footer.html'"></footer>
+
 </div>

@@ -135,6 +135,7 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
     $scope.newFavorite = $rootScope.selectedPet;
     PetfinderRequest.postNewFavorite($scope.newFavorite)
       .then(function successCallback(response) {
+        $location.path("/favorites");
       });
   };
 
