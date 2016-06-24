@@ -1,19 +1,40 @@
 <div class="fav-content col s10 offset-s1">
+
+
   <div class="row">
   <h2 class="fav-title">Favorite Pets</h2>
-  <div class="fav-collection col l6 offset-l3">
+  <div class="standard-view">
+    <div class="fav-collection col l6 offset-l3">
 
-  <ul class="collection">
-    <li class="collection-item avatar" ng-repeat="pet in favoritePets">
-      <img ng-src={{pet.img}} alt="" class="fav-img">
-      <span class="title"><h2 ng-click="displaySingleFavorite(pet.id)" class="fav-h2 {{pet.id}}">{{pet.name}}</h2></span>
-      <button ng-click="removeFromFavorites(pet.id)" class="fav-btn btn waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-heart-o"></i>
-               </button>
-    </li>
-  </ul>
+    <ul class="collection">
+      <li class="collection-item avatar" ng-repeat="pet in favoritePets">
+        <img ng-src={{pet.img}} alt="" class="fav-img">
+        <span class="title"><h2 ng-click="displaySingleFavorite(pet.id)" class="fav-h2 {{pet.id}}">{{pet.name}}</h2></span>
+        <button ng-click="removeFromFavorites(pet.id)" class="fav-btn btn waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-heart-o"></i>
+                 </button>
+      </li>
+    </ul>
+    </div>
+    </div>
+    
   </div>
+
+  <div class="mobile-view">
+    <div class="fav-collection col l6 offset-l3">
+
+    <ul class="collection mobile-collection">
+      <li class="collection-item avatar" ng-repeat="pet in favoritePets">
+        <img ng-src={{pet.img}} alt="" class="fav-img">
+        <span class="title"><h2 ng-click="displaySingleFavorite(pet.id)" class="fav-h2 {{pet.id}}">{{pet.name}}</h2></span>
+        <button ng-click="removeFromFavorites(pet.id)" class="fav-btn btn waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-heart-o"></i>
+                 </button>
+      </li>
+    </ul>
+    </div>
+    </div>
+    <footer class="mobile-fav-footer-spacing orange darken-3" ng-show="showPets" ng-include="'./partials/footer.html'"></footer>
   </div>
   
-  <footer class="footer-spacing orange darken-3" ng-show="!showPets" ng-include="'./partials/footer.html'"></footer>
+  <footer class="standard-view footer-spacing orange darken-3" ng-show="showPets" ng-include="'./partials/footer.html'"></footer>
 
 </div>
