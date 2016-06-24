@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module('MaccAdopt', ['ngRoute', 'ui.materialize'])
+var app = angular.module('MaccAdopt', ['ngAnimate', 'ngRoute', 'ui.materialize', 'ngTouch', 'ngFader'])
   .constant("firebaseURL", `https://nss-matt-fe-capstone.firebaseio.com/`);
 
   let isAuth = (AuthFactory) => new Promise ((resolve, reject) => {
