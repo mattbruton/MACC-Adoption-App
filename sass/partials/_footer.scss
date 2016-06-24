@@ -2,6 +2,12 @@
 
 footer {
   span {
+    // min-height: 50px;
     color: $nav-grey;
   }
+}
+
+.footer-spacing {
+  margin-top: 20px;
+  padding-top: 20px;
 }

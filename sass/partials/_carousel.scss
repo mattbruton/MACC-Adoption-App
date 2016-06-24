@@ -2,16 +2,12 @@
 
 .carousel-content {
   position: relative;
-  top: 135px;
+  top: 70px;
   background-color: $lighter-blue;
 }
 
-.carousel img {
-    min-width: 100%;
-    height:auto;
-}
-
-
-.slider-news {
-  margin-left: 40%;
+.slider-img {
+    width: 80%;
+    min-height: 500px;
+    margin: auto;
 }
