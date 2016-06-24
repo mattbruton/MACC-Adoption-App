@@ -1,0 +1,43 @@
+@import "../modules/color";
+
+.services-content {
+  position: relative;
+  top: 70px;
+  background-color: $lighter-blue;
+}
+
+.services-text {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.services-collapse {
+    display: block;
+    cursor: pointer;
+    min-height: 3rem;
+    line-height: 3rem;
+    padding: 0 0rem;
+    background-color: $nav-grey;
+    border-bottom: 0px solid #ddd;
+    border-radius: 10px;
+    
+}
+
+.services-row {
+    padding: 0px -0.75rem !important;
+    border-radius: 10px;
+}
+
+.collapsible-header {
+    display: block;
+    cursor: pointer;
+    min-height: 3rem;
+    line-height: 3rem;
+    padding: 0 0rem;
+    background-color: $lighter-orange;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+ .collapsible-header div:nth-child(even) {
+    background: #ff0000;
+}

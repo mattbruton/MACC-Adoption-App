@@ -21,7 +21,11 @@ app.config(function($routeProvider){
       }).
     when('/details/:id',{
       templateUrl: 'partials/details.html',
-      controller: 'SearchCtrl'
+      controller: 'FavCtrl'
+      }).
+    when('/services',{
+      templateUrl: 'partials/services.html',
+      controller: 'ServicesCtrl'
       }).
     when('/search',{
       templateUrl: 'partials/search.html',

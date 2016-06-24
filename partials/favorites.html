@@ -6,7 +6,7 @@
   <ul class="collection">
     <li class="collection-item avatar" ng-repeat="pet in favoritePets">
       <img ng-src={{pet.img}} alt="" class="fav-img">
-      <span class="title"><h2 class="fav-h2">{{pet.name}}</h2></span>
+      <span class="title"><h2 ng-click="displaySingleFavorite(pet.id)" class="fav-h2 {{pet.id}}">{{pet.name}}</h2></span>
       <button ng-click="removeFromFavorites(pet.id)" class="fav-btn btn waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-heart-o"></i>
                </button>
     </li>

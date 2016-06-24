@@ -1,8 +1,10 @@
 "use strict";
 
-app.controller("FavCtrl", function($scope, PetfinderRequest) {
+app.controller("FavCtrl", function($scope, $rootScope, PetfinderRequest, $location) {
 
   $scope.favoritePets = []; 
+
+  $scope.selectedPet = $rootScope.selectedPet;
 
   $scope.displayFavorites = function(data) {
     PetfinderRequest.getFavoritePets().then(function(data){
@@ -11,12 +13,22 @@ app.controller("FavCtrl", function($scope, PetfinderRequest) {
     })
   };
 
-  $scope.addNewFavorite = function() {
-    $scope.newFavorite = $rootScope.selectedPet;
-    PetfinderRequest.postNewFavorite($scope.newFavorite)
-      .then(function successCallback(response) {
-        $location.path("/favorites");
-      });
+  $scope.displaySingleFavorite = function(favoriteId) {
+    PetfinderRequest.getFavoritePets().then(function(response) {
+      response.forEach(function(pet) {
+        if (favoriteId === pet.id) {
+          $rootScope.selectedPet = pet;
+        } else {
+          console.log("not working");
+        }
+        $location.path(`/details/${$rootScope.selectedPet.id}`);
+      })
+      console.log(response);
+    })
+  }
+
+  $scope.returnToFavorites = function() {
+    $location.path(`/favorites`);
   };
 
   $scope.removeFromFavorites = function(favoriteId) {
