@@ -18,8 +18,6 @@ app.controller("FavCtrl", function($scope, $rootScope, PetfinderRequest, $locati
       response.forEach(function(pet) {
         if (favoriteId === pet.id) {
           $rootScope.selectedPet = pet;
-        } else {
-          console.log("not working");
         }
         $location.path(`/details/${$rootScope.selectedPet.id}`);
       })
@@ -36,6 +34,7 @@ app.controller("FavCtrl", function($scope, $rootScope, PetfinderRequest, $locati
         PetfinderRequest.deleteFavorite(favoriteId).then(function(response) {
             PetfinderRequest.getFavoritePets().then(function(allFavorites) {
                 $scope.favoritePets = allFavorites;
+                $location.path(`/favorites`);
             });
         });
     };

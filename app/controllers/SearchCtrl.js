@@ -59,7 +59,6 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
       if (pet.animal.$t === $scope.select.value && pet.status.$t === "A") {
         $scope.animalsToDisplay.push(pet);
 
-        console.log($scope.animalsToDisplay);
         if ($scope.ages.value !== "") {
         $scope.filterByAge();
         }
@@ -84,7 +83,6 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
         $scope.petSelected = true;
         $scope.showPets = false;
         $scope.isSearching = false;
-        console.log($rootScope.selectedPet);
       }
     });
   };
@@ -93,7 +91,6 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
     $scope.animalsToDisplay.forEach(function(pet) {
       if (pet.age.$t !== $scope.ages.value) {
         $scope.animalsToDisplay.pop(pet);
-        console.log($scope.animalsToDisplay);
       }
     });
   };
@@ -102,7 +99,6 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
     $scope.animalsToDisplay.forEach(function(pet) {
       if (pet.sex.$t !== $scope.sexes.value) {
         $scope.animalsToDisplay.pop(pet);
-        console.log($scope.animalsToDisplay);
       }
     });
   };
@@ -111,7 +107,6 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
     $scope.animalsToDisplay.forEach(function(pet) {
       if (pet.size.$t !== $scope.sizes.value) {
         $scope.animalsToDisplay.pop(pet);
-        console.log($scope.animalsToDisplay);
       }
     });
   };
