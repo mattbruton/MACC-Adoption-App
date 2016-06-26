@@ -1,9 +1,15 @@
+<div class="row">
+  <div class="carousel-content col s12">
+    <ng-fader class="col s10 offset-s1"></ng-fader>
+  </div>
+</div>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link href="./img/macc-fav.png" rel="icon" type="image/x-icon" />
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
@@ -11,12 +17,13 @@
   <link rel="stylesheet" type="text/css" href="./styles/main.css">
   <title>Metro Animal Care and Control</title>
 </head>
+
 <body ng-app="MaccAdopt">
-  
+
   <div ng-include="'./partials/nav.html'"></div>
 
   <main class="primary-content">
-  <div ng-view></div>
+    <div ng-view></div>
   </main>
 
   <footer class="footer-spacing orange darken-3" ng-include="'./partials/footer.html'"></footer>
@@ -31,7 +38,6 @@
 
   <script src="./lib/node_modules/angular-route/angular-route.min.js"></script>
 
-  <script src="./lib/bower_components/angular-slick-carousel/dist/angular-slick.min.js"></script>
 
   <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 
@@ -43,11 +49,11 @@
   <script type="text/javascript" src="./app/factories/APIFactory.js"></script>
 
   <script type="text/javascript" src="./app/controllers/FavCtrl.js"></script>
-  <script type="text/javascript" src="./app/controllers/CarouselCtrl.js"></script>
   <script type="text/javascript" src="./app/controllers/LoginCtrl.js"></script>
   <script type="text/javascript" src="./app/controllers/SearchCtrl.js"></script>
   <script type="text/javascript" src="./app/controllers/ServicesCtrl.js"></script>
 
 
 </body>
+
 </html>

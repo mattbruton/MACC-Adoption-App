@@ -16,8 +16,7 @@ var app = angular.module('MaccAdopt', ['ngAnimate', 'ngRoute', 'ui.materialize',
 app.config(function($routeProvider){
   $routeProvider.
     when('/',{
-      templateUrl: 'partials/carousel.html',
-      controller: 'CarouselCtrl'
+      templateUrl: 'partials/carousel.html'
       }).
     when('/details/:id',{
       templateUrl: 'partials/details.html',

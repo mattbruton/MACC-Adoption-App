@@ -34,7 +34,7 @@ var postNewFavorite = function(newFavorite){
                     name: newFavorite[0].name.$t,
                     breed: newFavorite[0].breeds.breed.$t,
                     age: newFavorite[0].age.$t,
-                    img: newFavorite[0].media.photos.photo[2].$t,
+                    img: newFavorite[0].media.photos.photo[3].$t,
                     uid: user.uid
                 })
             )
