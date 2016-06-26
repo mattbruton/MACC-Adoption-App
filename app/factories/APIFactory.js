@@ -20,64 +20,64 @@ app.factory("PetfinderRequest", function($q, $http, firebaseURL, AuthFactory) {
     });
   };
 
-var postNewFavorite = function(newFavorite){
-        let user = AuthFactory.getUser();
-        console.log("user", user);
-        return $q(function(resolve, reject) {
-            $http.post(
-                `${firebaseURL}favorites.json`,
-                JSON.stringify({
-                    animal: newFavorite[0].animal.$t,
-                    shelterPetId: newFavorite[0].shelterPetId.$t,
-                    size: newFavorite[0].size.$t,
-                    sex: newFavorite[0].sex.$t,
-                    name: newFavorite[0].name.$t,
-                    breed: newFavorite[0].breeds.breed.$t,
-                    age: newFavorite[0].age.$t,
-                    img: newFavorite[0].media.photos.photo[3].$t,
-                    uid: user.uid
-                })
-            )
-            .success(
-                function(objectFromFirebase) {
-                    resolve(objectFromFirebase);
-                }
-            ).error(function(error){
+  var postNewFavorite = function(newFavorite) {
+    let user = AuthFactory.getUser();
+    console.log("user", user);
+    return $q(function(resolve, reject) {
+      $http.post(
+          `${firebaseURL}favorites.json`,
+          JSON.stringify({
+            animal: newFavorite[0].animal.$t,
+            shelterPetId: newFavorite[0].shelterPetId.$t,
+            size: newFavorite[0].size.$t,
+            sex: newFavorite[0].sex.$t,
+            name: newFavorite[0].name.$t,
+            breed: newFavorite[0].breeds.breed.$t,
+            age: newFavorite[0].age.$t,
+            img: newFavorite[0].media.photos.photo[3].$t,
+            uid: user.uid
+          })
+        )
+        .success(
+          function(objectFromFirebase) {
+            resolve(objectFromFirebase);
+          }
+        ).error(function(error) {
           reject(error);
-            });
         });
+    });
   };
 
   var getFavoritePets = function() {
-        let favorites = [];
-        var user = AuthFactory.getUser();
-        return $q(function(resolve, reject) {
-            $http.get(`${firebaseURL}favorites.json`)
-                .success(function(petObject) {
-                    var petCollection = petObject;
-                    Object.keys(petCollection).forEach(function(key) {
-                      if (petCollection[key].uid === user.uid) {
-                        petCollection[key].id = key;
-                        favorites.push(petCollection[key]);
-                      }
-                    });
-                    resolve(favorites);
-                })
-                .error(function(error) {
-                    reject(error);
-                });
+    let favorites = [];
+    var user = AuthFactory.getUser();
+    return $q(function(resolve, reject) {
+      $http.get(`${firebaseURL}favorites.json`)
+        .success(function(petObject) {
+          var petCollection = petObject;
+          Object.keys(petCollection).forEach(function(key) {
+            if (petCollection[key].uid === user.uid) {
+              petCollection[key].id = key;
+              favorites.push(petCollection[key]);
+            }
+          });
+          resolve(favorites);
+        })
+        .error(function(error) {
+          reject(error);
         });
-    };
+    });
+  };
 
-    var deleteFavorite = function(favoriteId) {
-        return $q(function(resolve, reject) {
-            $http
-                .delete(`${firebaseURL}favorites/${favoriteId}.json`)
-                .success(function(objectFromFirebase) {
-                    resolve(objectFromFirebase);
-                });
+  var deleteFavorite = function(favoriteId) {
+    return $q(function(resolve, reject) {
+      $http
+        .delete(`${firebaseURL}favorites/${favoriteId}.json`)
+        .success(function(objectFromFirebase) {
+          resolve(objectFromFirebase);
         });
-    };
+    });
+  };
 
 
   return {

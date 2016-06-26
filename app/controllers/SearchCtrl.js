@@ -21,36 +21,36 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
   $scope.petSelected = false;
 
   $scope.select = {
-            value: "",
-            choices: ["Dog", "Cat", "Small & Furry"]
-        };
+    value: "",
+    choices: ["Dog", "Cat", "Small & Furry"]
+  };
 
   $scope.sizes = {
-            value: "",
-            choices: ["S", "M", "L"]
-        };
+    value: "",
+    choices: ["S", "M", "L"]
+  };
 
   $scope.ages = {
-            value: "",
-            choices: ["Baby","Young", "Adult", "Senior"]
-        };
+    value: "",
+    choices: ["Baby", "Young", "Adult", "Senior"]
+  };
 
   $scope.sexes = {
-            value: "",
-            choices: ["M", "F"]
-        };
+    value: "",
+    choices: ["M", "F"]
+  };
 
   $scope.newFavorite = {
-        name: "",
-        sex:"",
-        breed: "",
-        size: "",
-        petShelterId: "",
-        animal:"",
-        img: "",
-        age: "",
-        uid:""
-    };
+    name: "",
+    sex: "",
+    breed: "",
+    size: "",
+    petShelterId: "",
+    animal: "",
+    img: "",
+    age: "",
+    uid: ""
+  };
 
 
   $scope.displayPets = function() {
@@ -60,13 +60,13 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
         $scope.animalsToDisplay.push(pet);
 
         if ($scope.ages.value !== "") {
-        $scope.filterByAge();
+          $scope.filterByAge();
         }
         if ($scope.sexes.value !== "") {
-        $scope.filterBySex();
+          $scope.filterBySex();
         }
         if ($scope.sizes.value !== "") {
-        $scope.filterBySize();
+          $scope.filterBySize();
         }
       }
       $scope.isSearching = false;
