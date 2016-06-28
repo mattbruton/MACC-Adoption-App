@@ -1,4 +1,5 @@
 .DS_Store
 lib/bower_components
 lib/node_modules
+app/todo.js
 styles/main.css
