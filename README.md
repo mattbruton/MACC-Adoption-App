@@ -1,4 +1,4 @@
-MACC Adoption App
+MACC Adoption Update
 ================
 
   - [Goals](#goals)
@@ -27,10 +27,12 @@ Then `cd ../` back to the root directory and:
 
 
 ![Pet Results Mobile View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/mb-other/img/petresult-mobile-ss.png)
-![Pet Results Mobile View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/mb-other/img/petsearch-mobile-ss.png)
+![Pet Search Mobile View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/mb-other/img/petsearch-mobile-ss.png)
 
 
 ## Under Development
+
+Eventually, I would like to develop a view for staff/volunteers of MACC to be able to view adoption applications, volunteer applications, and posting/editing of pets' information, but I don't have the tools necessary to implement those features in a meaningful way at the moment.
 
 ## Contributing
 
