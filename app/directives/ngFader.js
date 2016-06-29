@@ -10,20 +10,17 @@
 
         //List your images here.
         scope.images = [{
-          src: '../img/1.png',
-          alt: 'The Beach'
+          src: '../img/sampleDog.png',
+          alt: 'Dog of the Week'
         }, {
-          src: '../img/2.png',
-          alt: 'The Beach'
+          src: '../img/sampleCat.png',
+          alt: 'Cat of the Week'
         }, {
-          src: '../img/3.png',
-          alt: 'The Beach'
+          src: '../img/health-rabies-clinics.png',
+          alt: 'Low Cost Rabies Clinic'
         }, {
-          src: '../img/4.png',
-          alt: 'The Beach'
-        }, {
-          src: '../img/5.png',
-          alt: 'The Beach'
+          src: '../img/supplies.png',
+          alt: 'Wish list'
         }];
 
         /*****************************************************

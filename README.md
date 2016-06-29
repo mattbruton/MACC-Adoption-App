@@ -10,7 +10,7 @@ MACC Adoption Update
 
 ## Goals
 1. Improve overall presentation of available pets for adoption at MACC for users.
-2. Make finding/retaining information about available pets more streamlined than current version of site (ie. ability to e-mail pet information rather than having to remember Shelter ID's).
+2. Make finding/retaining information about available pets more streamlined than current version of site (ie. ability to e-mail pet information rather than having to remember Shelter IDs).
 
 ## Installation
 
