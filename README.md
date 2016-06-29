@@ -26,8 +26,9 @@ Then `cd ../` back to the root directory and:
 ## Screencaps
 
 
-![Pet Results Mobile View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/mb-other/img/petresult-mobile-ss.png)
-![Pet Search Mobile View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/mb-other/img/petsearch-mobile-ss.png)
+![Pet Results Mobile View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/img/petresult-mobile-ss.png)
+![Pet Search Mobile View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/img/petsearch-mobile-ss.png)
+![Pet Results Browser View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/img/browser-search-result.png)
 
 
 ## Under Development
