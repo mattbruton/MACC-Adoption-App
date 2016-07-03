@@ -16,6 +16,10 @@
         </button>
       </div>
       <div class="col s12 l2 offset-l5">
+        <button ng-click="sendPetInfo()" class="col s8 offset-s2 btn waves-effect waves-light orange darken-3 selected-pet-button" name="action"><i class="fa fa-envelope" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="col s12 l2 offset-l5">
         <button ng-click="returnToFavorites()" class="col s8 offset-s2 btn waves-effect waves-light orange darken-3 selected-pet-button" name="action"><i class="fa fa-arrow-left left"></i>Back
         </button>
       </div>
@@ -23,44 +27,59 @@
     <footer class="page-footer orange darken-3" ng-show="!showPets" ng-include="'./partials/footer.html'"></footer>
   </div>
 
-  <div class="standard-view">
-    <div class="selected-pet">
-      <div class="col m6 offset-m3">
-        <h3>Hi, I am {{selectedPet.name}}</h3>
-        <h5>I can't wait to meet you!</h5>
-      </div>
+<div class="standard-view">
+  <div class="selected-pet-card row">
 
-      <div class="selected-pet-card row">
-
-        <div class="col m9 search-pet-img">
-          <img ng-src="{{selectedPet.img}}">
-        </div>
-        <div class="col m3 pull-m2">
-          <div class="row">
-            <div class="col s12 m12">
-              <button ng-click="removeFromFavorites(selectedPet.id)" class="fav-btn btn waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-heart-o"></i>
-              </button>
-            </div>
-
-            <div class="col s12 m12">
-              <button ng-click="returnToFavorites()" class="col s8 offset-s2 btn waves-effect waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-arrow-left left"></i>Back
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col m10 offset-m1 search-pet-bio">
-          <h5>Age: {{selectedPet.age}}</h5>
-          <h5>Size: {{selectedPet.size}}</h5>
-          <h5>Breed: {{selectedPet.breed}}</h5>
-          <h5>Shelter ID: {{selectedPet.shelterPetId}}</h5>
-          <h5>Sex: {{selectedPet.sex}}</h5>
-        </div>
-
-      </div>
-
+    <div class="col m6 offset-m3 search-pet-img">
+      <img ng-src="{{selectedPet.img}}">
     </div>
-    <footer class="page-footer orange darken-3" ng-show="!showPets" ng-include="'./partials/footer.html'"></footer>
+    <!-- <div class="col m3 pull-m2">
+      <div class="row">
+        <div class="col s12 m12">
+          <button ng-show="isActive" ng-click="addNewFavorite()" class="col s8 offset-s2 btn waves-effect waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-heart" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="col s12 m12">
+          <button ng-click="returnToResults()" class="col s8 offset-s2 btn waves-effect waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-arrow-left left"></i>Back
+          </button>
+        </div>
+      </div>
+    </div> -->
+    <div class="col m10 offset-m1 search-pet-bio">
+      <h3>Hi, I am {{selectedPet.name}}</h3>
+      <h5>I can't wait to meet you!</h5>
+      <br>
+      <h5>Age: {{selectedPet.age}}</h5>
+      <h5>Size: {{selectedPet.size}}</h5>
+      <h5>Breed: {{selectedPet.breed}}</h5>
+      <h5>Shelter ID: {{selectedPet.shelterPetId}}</h5>
+      <h5>Sex: {{selectedPet.sex}}</h5>
+    </div>
+
+    <div class="col m6 offset-m3">
+      <div class="row">
+        <div class="col l6 offset-l3 m6 offset-m3">
+          <button ng-show="isActive" ng-click="addNewFavorite()" class="col s8 offset-s2 btn waves-effect waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-heart-o" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="col l6 offset-l3 m6 offset-m3">
+          <button ng-show="isActive" ng-click="sendPetInfo()" class="col s8 offset-s2 btn waves-effect waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-envelope" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="col l6 offset-l3 m6 offset-m3">
+          <button ng-click="returnToFavorites()" class="col s8 offset-s2 btn waves-effect waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-arrow-left left"></i>Back
+          </button>
+        </div>
+      </div>
+    </div>
 
   </div>
+
+</div>
+<footer class="page-footer orange darken-3" ng-show="showPets" ng-include="'./partials/footer.html'"></footer>
+</div>
+</div>
 </div>
