@@ -46,8 +46,10 @@
         </div>
       </div>
     </div> -->
-
     <div class="col m10 offset-m1 search-pet-bio">
+      <h3>Hi, I am {{selectedPet.name}}</h3>
+      <h5>I can't wait to meet you!</h5>
+      <br>
       <h5>Age: {{selectedPet.age}}</h5>
       <h5>Size: {{selectedPet.size}}</h5>
       <h5>Breed: {{selectedPet.breed}}</h5>
@@ -68,7 +70,7 @@
         </div>
 
         <div class="col l6 offset-l3 m6 offset-m3">
-          <button ng-click="returnToResults()" class="col s8 offset-s2 btn waves-effect waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-arrow-left left"></i>Back
+          <button ng-click="returnToFavorites()" class="col s8 offset-s2 btn waves-effect waves-light blue darken-3 selected-pet-button" name="action"><i class="fa fa-arrow-left left"></i>Back
           </button>
         </div>
       </div>
