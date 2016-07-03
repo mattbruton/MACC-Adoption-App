@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-slick-carousel": "^3.1.5"
+    "angular-slick-carousel": "^3.1.5",
+    "angular-mandrill": "^0.0.2"
   }
 }
