@@ -9,7 +9,6 @@ app.controller("FavCtrl", function($scope, $rootScope, PetfinderRequest, $locati
   $scope.displayFavorites = function(data) {
     PetfinderRequest.getFavoritePets().then(function(data) {
       $scope.favoritePets = data;
-      console.log(data);
     })
   };
 
@@ -21,7 +20,6 @@ app.controller("FavCtrl", function($scope, $rootScope, PetfinderRequest, $locati
         }
         $location.path(`/details/${$rootScope.selectedPet.id}`);
       })
-      console.log(response);
     })
   }
 
@@ -30,7 +28,6 @@ app.controller("FavCtrl", function($scope, $rootScope, PetfinderRequest, $locati
   };
 
   $scope.removeFromFavorites = function(favoriteId) {
-    console.log(favoriteId);
     PetfinderRequest.deleteFavorite(favoriteId).then(function(response) {
       PetfinderRequest.getFavoritePets().then(function(allFavorites) {
         $scope.favoritePets = allFavorites;

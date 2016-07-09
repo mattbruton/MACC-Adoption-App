@@ -11,7 +11,6 @@ app.factory("PetfinderRequest", function($q, $http, firebaseURL, AuthFactory) {
           Object.keys(animalCollection.petfinder.pets.pet).forEach(function(searchResult) {
             array.push(animalCollection.petfinder.pets.pet[searchResult]);
           });
-          console.log(array);
           resolve(array);
         })
         .error(function(error) {
@@ -22,7 +21,6 @@ app.factory("PetfinderRequest", function($q, $http, firebaseURL, AuthFactory) {
 
   var postNewFavorite = function(newFavorite) {
     let user = AuthFactory.getUser();
-    console.log("user", user);
     return $q(function(resolve, reject) {
       $http.post(
           `${firebaseURL}favorites.json`,
