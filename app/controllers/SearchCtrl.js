@@ -134,12 +134,6 @@ app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $rout
       });
   };
 
-  let user = AuthFactory.getUser();
-
-  if (user !== null) {
-    console.log(user.password.email);
-  };
-
   $scope.findPets();
 
 });
