@@ -1,40 +1,83 @@
-MACC Adoption Update
-================
+# Unofficial MACC Adoption App
 
-  - [Goals](#goals)
-  - [Installation](#installation)
-  - [Screencaps](#screencaps)
-  - [Under Development](#under-development)
-  - [Contributing](#contributing)
+This project was used as my Front-end Capstone at Nashville Software School. Goals with the project were to improve certain aspects of the original site, such as having a cohesive theme throughout application and making navigation more intuitive.
 
+==============================
 
-## Goals
-1. Improve overall presentation of available pets for adoption at MACC for users.
-2. Make finding/retaining information about available pets more streamlined than current version of site (ie. ability to e-mail pet information rather than having to remember Shelter IDs).
+- Viewing/Downloading Project
+    - [To View Hosted Project](#to-view-hosted-project)
+    - [Installation](#installation)
+    - [To Run](#torun)
+- Specifications and Project Information
+    - [Languages] (#languages)
+    - [Tools] (#tools)
+    - [Screenshots](#screenshots)
+    - [Current Issues](#current-issues)
 
-## Installation
+==============================
 
-1. Clone the project into your desired directory.
-2. `cd lib/`
-3. `bower install`
-4. `npm install`
+## Viewing/Downloading Project
 
-Then `cd ../` back to the root directory and:
+### To View Hosted Project
 
-5. Using a tool such as [npm http-server](https://www.npmjs.com/package/http-server), serve up the project. For npm http-server, you would type `http-server -p 8080` or whichever port you'd like to select.
+[Unofficial MACC Adoption App](https://mb-nss-exercises.firebaseapp.com/MACC)
 
-## Screencaps
+### Installation
 
+Clone the repository from GitHub:
+
+`git clone https://github.com/mattbruton/MACC.git`
+
+Navigate to the project from the directory it was cloned into:
+
+`cd MACC/`
+
+### To Run
+
+If you need a command line http server, to install http-server globally:
+
+`npm install http-server -g`
+
+Install project dependencies:
+`npm install` 
+then:
+`bower install`
+
+Then:
+
+`http-server` or `http-server -p XXXX` (the X's represent the port of your choice)
+
+You should now be able to open your browser and type `localhost:8080` to view the project.
+
+## Specs and Project Information
+
+### Languages
+
+1. JavaScript
+1. HTML
+1. CSS
+
+### Tools / Frameworks
+
+1. [AngularJS](https://angularjs.org/)
+1. [Sass](http://sass-lang.com/)
+1. [gulp](http://gulpjs.com/)
+1. [Git](https://git-scm.com/)
+1. [Atom](https://atom.io/)
+1. [NPM http-server](https://www.npmjs.com/package/http-server)
+
+### Screenshots
 
 ![Pet Results Mobile View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/master/img/petresult-mobile-ss.png)
 ![Pet Search Mobile View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/master/img/petsearch-mobile-ss.png)
 ![Pet Results Browser View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/master/img/browser-search-result.png)
 
+### Current Issues
 
-## Under Development
+==============================
 
-Eventually, I would like to develop a view for staff/volunteers of MACC to be able to view adoption applications, volunteer applications, and posting/editing of pets' information, but I don't have the tools necessary to implement those features in a meaningful way at the moment.
+1. E-mail service no longer working correctly in hosted project, need to investigate and correct issue.
+1. Styling is inconsistant across certain devices and browser resolutions.
+1. Search button in navigation doesn't work as expected if currently searching pets. (Should refresh page)
 
-## Contributing
-
-Currently, this project is my Front End Capstone at Nashville Software School. I am unable to allow any contributions to be made at the moment.
+==============================
