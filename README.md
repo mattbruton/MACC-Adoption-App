@@ -20,17 +20,17 @@ This project was used as my Front-end Capstone at Nashville Software School. Goa
 
 ### To View Hosted Project
 
-[Unofficial MACC Adoption App](https://mb-nss-exercises.firebaseapp.com/MACC)
+[Unofficial MACC Adoption App](https://mb-nss-exercises.firebaseapp.com/MACC-Adoption-App)
 
 ### Installation
 
 Clone the repository from GitHub:
 
-`git clone https://github.com/mattbruton/MACC.git`
+`git clone https://github.com/mattbruton/MACC-Adoption-App.git`
 
 Navigate to the project from the directory it was cloned into:
 
-`cd MACC/`
+`cd MACC-Adoption-App/`
 
 ### To Run
 
