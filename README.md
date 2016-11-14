@@ -12,7 +12,7 @@ This project was used as my Front-end Capstone at Nashville Software School. Goa
     - [Languages] (#languages)
     - [Tools] (#tools)
     - [Screenshots](#screenshots)
-    - [Current Issues]{#current-issues}
+    - [Current Issues](#current-issues)
 
 ==============================
 
