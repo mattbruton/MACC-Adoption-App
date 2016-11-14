@@ -12,7 +12,7 @@ This project was used as my Front-end Capstone at Nashville Software School. Goa
     - [Languages] (#languages)
     - [Tools] (#tools)
     - [Screenshots](#screenshots)
-    - [Current Known Issues]{#current-known-issues}
+    - [Current Issues]{#current-issues}
 
 ==============================
 
@@ -72,7 +72,7 @@ You should now be able to open your browser and type `localhost:8080` to view th
 ![Pet Search Mobile View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/master/img/petsearch-mobile-ss.png)
 ![Pet Results Browser View](https://raw.githubusercontent.com/mattbruton/MACC-Adoption-App/master/img/browser-search-result.png)
 
-### Current Known Issues
+### Current Issues
 
 ==============================
 
