@@ -2,22 +2,42 @@
 
 app.factory("PetfinderRequest", function($q, $http, firebaseURL, AuthFactory) {
 
-  var getPetsFromPetfinder = function(array) {
-    // var animals = [];
+  // var getPetsFromPetfinder2 = function(array) {
+  //   // var animals = [];
 
-    return $q(function(resolve, reject) {
-      $http.get("http://api.petfinder.com/shelter.getPets?key=576a9be0464ad49bafe9b98ad8b6eccb&id=TN172&count=200&output=full&format=json")
-        .success(function(animalCollection) {
-          Object.keys(animalCollection.petfinder.pets.pet).forEach(function(searchResult) {
-            array.push(animalCollection.petfinder.pets.pet[searchResult]);
-          });
-          resolve(array);
-        })
-        .error(function(error) {
-          reject(error);
+  //   return $q(function(resolve, reject) {
+  //     $http.get("http://api.petfinder.com/shelter.getPets?key=576a9be0464ad49bafe9b98ad8b6eccb&id=TN172&count=200&output=full&format=json")
+  //       .success(function(animalCollection) {
+  //         Object.keys(animalCollection.petfinder.pets.pet).forEach(function(searchResult) {
+  //           array.push(animalCollection.petfinder.pets.pet[searchResult]);
+  //         });
+  //         resolve(array);
+  //       })
+  //       .error(function(error) {
+  //         reject(error);
+  //       });
+  //   });
+  // };
+
+  var getPetsFromPetfinder = function(array) {
+    $.ajax({
+            url: 'https://api.petfinder.com/shelter.getPets?key=576a9be0464ad49bafe9b98ad8b6eccb&id=TN172&count=200&output=full&format=json',
+            dataType: 'JSONP',
+            type: 'GET',
+            async: false,
+            crossDomain: true,
+            success: function (animalCollection) { 
+              Object.keys(animalCollection.petfinder.pets.pet).forEach(function(searchResult) {
+              array.push(animalCollection.petfinder.pets.pet[searchResult]);
+              });
+            },
+            failure: function (error) {
+              console.log(error);
+             }
         });
-    });
-  };
+  }
+
+
 
   var postNewFavorite = function(newFavorite) {
     let user = AuthFactory.getUser();
