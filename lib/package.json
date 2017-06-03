@@ -5,8 +5,10 @@
   "main": "gulpfile.js",
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-materialize": "^0.2.2",
     "angular-route": "^1.6.4",
     "firebase": "^4.1.1",
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-jshint": "^2.0.4",
     "gulp-sass": "^3.1.0",
