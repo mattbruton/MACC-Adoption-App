@@ -51,12 +51,10 @@ app.config(function($routeProvider, $locationProvider) {
 });
 
 app.run(($location, FirebaseCredentials) => {
-
 	let authConfig = {
 		apiKey: FirebaseCredentials.apiKey,
 		authDomain: FirebaseCredentials.authDomain,
 		databaseURL: FirebaseCredentials.databaseURL
 	};
-
 	firebase.initializeApp(authConfig);
 });
