@@ -1,40 +1,44 @@
 "use strict";
 
-app.controller("LoginCtrl", function($scope, $rootScope, $location, AuthFactory, firebaseURL) {
-  let ref = new Firebase(firebaseURL);
+app.controller("LoginCtrl", function ($scope, AuthFactory, $location) {
 
   $scope.account = {
     email: "",
     password: ""
   };
 
-  if ($location.path() === "/logout") {
-    ref.unauth();
-    $rootScope.isActive = false;
+  $scope.logout = () => {
+    AuthFactory.logoutUser()
+    .then(function (data) {
+      $location.path("/");
+    }, function (error) {
+      console.log("error occured on logout");
+    });
+  };
+
+  //when first loaded, make sure no one is logged in
+  if (AuthFactory.isAuthenticated()) {
+    $scope.logout();
   }
 
   $scope.register = () => {
-    ref.createUser({
+    console.log("you clicked register");
+    AuthFactory.createUser({
       email: $scope.account.email,
       password: $scope.account.password
-    }, (error, userData) => {
-      if (error) {
-        console.log(`Error creating user: ${error}`);
-      } else {
-        console.log(`Created user account with uid: ${userData.uid}`);
-        $scope.login();
-      }
+    })
+    .then((userData) => {
+      console.log("UserCtrl newUser:", userData);
+      $scope.login();
+    }, (error) => {
+      console.log("Error creating user:", error);
     });
   };
 
   $scope.login = () => {
-    AuthFactory
-      .authenticate($scope.account)
-      .then(() => {
-        $rootScope.isActive = true;
-        $location.path("/search");
-        $scope.$apply();
-      });
+    AuthFactory.loginUser($scope.account)
+    .then(() => {
+      $location.path("/");
+    });
   };
-
 });

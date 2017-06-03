@@ -27,9 +27,9 @@
      color: #000;
    }
 
-.input-field input[type=email]:focus + label {
-     color: #000;
-   }
+    .input-field input[type=email]:focus + label {
+        color: #000;
+    }
 
    .input-field input[type=email]:focus {
      border-bottom: 2px solid $main-orange;

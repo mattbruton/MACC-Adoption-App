@@ -1,7 +1,6 @@
 "use strict";
 
-var app = angular.module('MaccAdopt', ['ngRoute', 'ui.materialize','ngFader'])
-  .constant("firebaseURL", `https://nss-matt-fe-capstone.firebaseio.com/`);
+var app = angular.module('MaccAdopt', ['ngRoute']);
 
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
   if (AuthFactory.isAuthenticated()) {
@@ -49,4 +48,15 @@ app.config(function($routeProvider, $locationProvider) {
   otherwise('/');
   
   $locationProvider.html5Mode(true);
+});
+
+app.run(($location, FirebaseCredentials) => {
+
+	let authConfig = {
+		apiKey: FirebaseCredentials.apiKey,
+		authDomain: FirebaseCredentials.authDomain,
+		databaseURL: FirebaseCredentials.databaseURL
+	};
+
+	firebase.initializeApp(authConfig);
 });

@@ -3,7 +3,9 @@
 app-footer {
   display: flex;
   justify-content: center;
-  max-height: 30px;
+  align-items: center;
+  height: 25px;
+  background-color: $background-blue;
 }
 
 .text--footer {

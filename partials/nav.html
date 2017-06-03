@@ -55,14 +55,10 @@
   <a href="/" class="nav-logo"><img src="./img/MACC-nav-logo.png">
 
   <ul class="nav-links--default">
-    <li ng-show="isActive">
-
-
+    <li ng-if="isActive">
       <a class='nav-link paw' href='javascript:void(0);' data-activates='demoDropdown' dropdown data-hover="false">
             <i class="fa fa-paw" aria-hidden="true"></i>
           </a>
-
-
       <ul id='demoDropdown' class='dropdown-content paw-drop'>
         <li><a href="/favorites">Favorites</a>
         </li>
