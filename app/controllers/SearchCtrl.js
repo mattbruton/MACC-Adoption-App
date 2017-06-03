@@ -1,12 +1,10 @@
 "use strict";
 
-app.controller("SearchCtrl", function($scope, PetfinderRequest, $location, $routeParams, $rootScope, AuthFactory) {
+app.controller("SearchCtrl", function($scope, PetFactory, $location, $routeParams, $rootScope, AuthFactory) {
 
   /* Unfortunately, Petfinder's API will not let me query specific animal types when selecting a specific
      shelter. The workaround is uglier than I would like, but I have to pull all animals and then have them
      sorted based on type, then filter further based on the user's choices. */
-
-
 
   $scope.petfinderReturn = [];
 
