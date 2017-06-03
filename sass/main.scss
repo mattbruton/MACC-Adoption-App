@@ -1,4 +1,8 @@
-@import "partials/nav";
+@import "abstracts/variables";
+
+@import "layout/nav";
+@import "layout/footer";
+
 @import "partials/content";
 @import "partials/login";
 @import "partials/ngFader";
@@ -7,16 +11,24 @@
 @import "partials/search";
 @import "partials/services";
 @import "partials/favorites";
-@import "partials/footer";
+
 
 
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    text-align: center;
-  }
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  background-color: $lighter-blue;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+.container--main {
+  flex: 0 1 80%;
+  display: flex;
+  align-items: center;
+}
+
+app-nav {
+  
+}

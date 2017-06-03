@@ -1,8 +1,4 @@
-@import "../modules/color";
-
-body {
-  background-color: $lighter-blue;
-}
+@import "../abstracts/variables";
 
 @media (max-width: 600px) {
   .standard-view {

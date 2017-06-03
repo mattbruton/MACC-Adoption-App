@@ -17,7 +17,7 @@ let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
 //   MandrillProvider.setApiKey();
 // });
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
   $routeProvider.
   when('/', {
     templateUrl: 'partials/carousel.html'
@@ -47,4 +47,6 @@ app.config(function($routeProvider) {
     controller: 'LoginCtrl'
   }).
   otherwise('/');
+  
+  $locationProvider.html5Mode(true);
 });

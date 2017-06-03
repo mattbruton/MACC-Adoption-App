@@ -1,9 +1,11 @@
-@import "../modules/color";
+@import "../abstracts/variables";
 
 .carousel-content {
   position: relative;
   top: 70px;
   background-color: $lighter-blue;
+  display:flex;
+  align-items: center;
 }
 
 .slider-img {

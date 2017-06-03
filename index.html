@@ -16,23 +16,22 @@
   <!-- Primary Stylesheet for app -->
   <link rel="stylesheet" type="text/css" href="./styles/main.css">
   <title>Metro Animal Care and Control</title>
+  <base href="/">
 </head>
 
 <body ng-app="MaccAdopt">
 
-  <div ng-include="'./partials/nav.html'"></div>
+  <app-nav ng-include="'./partials/nav.html'"></app-nav>
 
-  <main class="primary-content">
-    <div ng-view></div>
-  </main>
+  <div class="container--main" ng-view></div>
 
-  <footer class="footer-spacing orange darken-3" ng-include="'./partials/footer.html'"></footer>
+  <app-footer class="orange darken-3" ng-include="'./partials/footer.html'"></app-footer>
 
   <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
+  <script type="text/javascript" src="./lib/node_modules/angular-materialize/src/angular-materialize.js"></script>
   <script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
   <script type="text/javascript" src="./lib/node_modules/materialize-css/js/materialize.js"></script>
-  <script type="text/javascript" src="./lib/node_modules/angular-materialize/src/angular-materialize.min.js"></script>
   <script src="./lib/node_modules/firebase/firebase.js"></script>
 
   <!--<script src="./lib/bower_components/angular-mandrill/dist/angular-mandrill.js"></script>-->

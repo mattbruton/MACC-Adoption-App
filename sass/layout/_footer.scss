@@ -1,0 +1,11 @@
+@import "../abstracts/variables";
+
+app-footer {
+  display: flex;
+  justify-content: center;
+  max-height: 30px;
+}
+
+.text--footer {
+  color: $nav-grey;
+}
