@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module('MaccAdopt', ['ngAnimate', 'ngRoute', 'ui.materialize', 'ngTouch', 'ngFader', 'angular-mandrill'])
+var app = angular.module('MaccAdopt', ['ngRoute', 'ui.materialize','ngFader'])
   .constant("firebaseURL", `https://nss-matt-fe-capstone.firebaseio.com/`);
 
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
@@ -13,9 +13,9 @@ let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
   }
 });
 
-app.config(function(MandrillProvider) {
-  MandrillProvider.setApiKey();
-});
+// app.config(function(MandrillProvider) {
+//   MandrillProvider.setApiKey();
+// });
 
 app.config(function($routeProvider) {
   $routeProvider.
