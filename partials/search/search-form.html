@@ -1,0 +1,15 @@
+<div class="search-content">
+  <h2 class="search-heading">Find a Pet</h2>
+    <select>
+      <option value="" disabled selected>Select Pet Type (Required)</option>
+      <option ng-repeat="value in select.choices">{{value}}</option>
+    </select>
+
+     <div class="row">
+      <div class="col s12 l2 offset-l5">
+        <button ng-click="displayPets()" class="col s8 offset-s2 btn waves-effect waves-light orange darken-3 search-button" name="action">Search
+          <i class="fa fa-arrow-right right"></i>
+        </button>
+      </div>
+    </div>
+</div>
