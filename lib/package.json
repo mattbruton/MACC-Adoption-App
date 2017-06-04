@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "angular": "^1.6.4",
-    "angular-materialize": "^0.2.2",
+    "angular-cookies": "^1.6.4",
     "angular-route": "^1.6.4",
     "firebase": "^4.1.1",
     "font-awesome": "^4.7.0",

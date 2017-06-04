@@ -33,10 +33,10 @@
       "resolved": "https://registry.npmjs.org/angular/-/angular-1.6.4.tgz",
       "integrity": "sha1-A7exXAGggC1+LPWTJA5gQFTcd/s="
     },
-    "angular-materialize": {
-      "version": "0.2.2",
-      "resolved": "https://registry.npmjs.org/angular-materialize/-/angular-materialize-0.2.2.tgz",
-      "integrity": "sha1-EzBM4A6YPgLSTKxNg14fS5yxDNM="
+    "angular-cookies": {
+      "version": "1.6.4",
+      "resolved": "https://registry.npmjs.org/angular-cookies/-/angular-cookies-1.6.4.tgz",
+      "integrity": "sha1-wo8/aqx6mCbB5F8daAckADblsm0="
     },
     "angular-route": {
       "version": "1.6.4",
@@ -2124,17 +2124,6 @@
         }
       }
     },
-    "node-materialize": {
-      "version": "https://github.com/ryepdx/node-materialize/tarball/master",
-      "integrity": "sha1-GBxxjijBDd9lyiHc2pO+oB5Nq6c=",
-      "dependencies": {
-        "jquery": {
-          "version": "2.2.4",
-          "resolved": "https://registry.npmjs.org/jquery/-/jquery-2.2.4.tgz",
-          "integrity": "sha1-LInWiJterFIqfuoywUUhVZxsvwI="
-        }
-      }
-    },
     "node-sass": {
       "version": "4.5.3",
       "resolved": "https://registry.npmjs.org/node-sass/-/node-sass-4.5.3.tgz",
@@ -2308,11 +2297,6 @@
       "version": "0.2.0",
       "resolved": "https://registry.npmjs.org/performance-now/-/performance-now-0.2.0.tgz",
       "integrity": "sha1-M+8wxcd9TqIcWlOGnZG1bY8lVeU="
-    },
-    "pickadate": {
-      "version": "3.5.6",
-      "resolved": "https://registry.npmjs.org/pickadate/-/pickadate-3.5.6.tgz",
-      "integrity": "sha1-yZgwI0O3mhmVT8ScRcxwg0dgKAY="
     },
     "pify": {
       "version": "2.3.0",
