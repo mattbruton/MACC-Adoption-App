@@ -1,3 +1,6 @@
+@import "vendors/materialize";
+@import "vendors/vendor-overrides";
+
 @import "abstracts/variables";
 
 @import "layout/nav";
@@ -5,9 +8,7 @@
 
 @import "partials/content";
 @import "partials/login";
-@import "partials/ngFader";
 @import "partials/forms";
-@import "partials/carousel";
 @import "partials/search";
 @import "partials/services";
 @import "partials/favorites";
@@ -24,8 +25,4 @@ body {
 .container--main {
   display: flex;
   align-items: center;
-}
-
-app-nav {
-  
 }
