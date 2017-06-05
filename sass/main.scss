@@ -5,24 +5,9 @@
 
 @import "layout/nav";
 @import "layout/footer";
+@import "layout/content";
 
-@import "partials/content";
-@import "partials/login";
 @import "partials/forms";
 @import "partials/search";
 @import "partials/services";
-@import "partials/favorites";
 
-body {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  background-color: $lighter-blue;
-}
-
-.container--main {
-  display: flex;
-  align-items: center;
-}

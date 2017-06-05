@@ -1,0 +1,15 @@
+@import "../abstracts/variables";
+
+body {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  background-color: $lighter-blue;
+}
+
+.container--main {
+  display: flex;
+  align-items: center;
+}
