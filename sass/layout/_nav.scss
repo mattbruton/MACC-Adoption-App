@@ -2,7 +2,7 @@
 
 nav {
   display: flex;
-  height: 7.5rem;
+  height: 6.5rem;
   justify-content: space-between;
   background-color: $nav-grey;
   border-bottom: 5px solid $background-blue;
@@ -20,7 +20,7 @@ nav {
 
   img {
     padding: 0px 20px;
-    max-height: 6rem;
+    max-height: 5.5rem;
     
     @media only screen and (max-device-width: 450px) {
       padding: 0;
