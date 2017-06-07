@@ -10,7 +10,9 @@ body {
 }
 
 .container--main {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }

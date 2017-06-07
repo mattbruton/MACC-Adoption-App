@@ -4,7 +4,7 @@ app-footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 25px;
+  min-height: 25px;
   background-color: $background-blue;
 }
 
