@@ -2,38 +2,6 @@
   <div ng-show="isSearching" class="search-height-fix">
     <h2 class="search-heading">Find a Pet</h2>
     <div class="row">
-      <div input-field class="col s10 offset-s1 l4 offset-l4 login-input">
-        <select ng-model="select.value" material-select>
-          <option value="" disabled selected>Select Pet Type (Required)</option>
-          <option ng-repeat="value in select.choices">{{value}}</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div input-field class="col s10 offset-s1 l4 offset-l4 login-input">
-        <select ng-model="sizes.value" material-select>
-          <option value="" selected>Size (Optional)</option>
-          <option ng-repeat="value in sizes.choices">{{value}}</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div input-field class="col s10 offset-s1 l4 offset-l4  login-input">
-        <select ng-model="ages.value" material-select>
-          <option value="" selected>Age (Optional)</option>
-          <option ng-repeat="value in ages.choices">{{value}}</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div input-field class="col s10 offset-s1 l4 offset-l4 login-input">
-        <select ng-model="sexes.value" material-select>
-          <option value="" selected>Sex (Optional)</option>
-          <option ng-repeat="value in sexes.choices">{{value}}</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
       <div class="col s12 l2 offset-l5">
         <button ng-click="displayPets()" class="col s8 offset-s2 btn waves-effect waves-light orange darken-3 search-button" name="action">Search
           <i class="fa fa-arrow-right right"></i>

@@ -3,18 +3,22 @@
     <h4>Search Available Pets</h4>
   </div>
   <div class="search-form">
-    <select>
-      <option disabled selected value="">Pet Type (Required)</option>
+    <select ng-model="types.value">
+       <option value="" disabled selected>Pet Type (Required)</option>
+       <option ng-repeat="value in types.choices">{{value}}</option>
     </select>
-    <select>
-      <option disabled selected value="">Size (Optional)</option>
+    <select ng-model="sizes.value">
+      <option value="" selected>Size (Optional)</option>
+      <option ng-repeat="value in sizes.choices">{{value}}</option>
     </select>
-    <select>
-      <option disabled selected value="">Age (Optional)</option>
+    <select ng-model="ages.value">
+      <option value="" selected>Age (Optional)</option>
+      <option ng-repeat="value in ages.choices">{{value}}</option>
     </select>
-    <select>
-      <option disabled selected value="">Sex (Optional)</option>
+    <select ng-model="sexes.value">
+      <option value="" selected>Sex (Optional)</option>
+      <option ng-repeat="value in sexes.choices">{{value}}</option>
     </select>
-    <button class="btn waves-effect waves-light search-button">Submit</button>
+    <button class="btn waves-effect waves-light search-button" ng-click="findPets()">Submit</button>
   </div>
 </div>
