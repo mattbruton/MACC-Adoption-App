@@ -27,17 +27,17 @@ app.controller("SearchFormCtrl", function ($scope, $window, $location, PetFactor
   };
 
   const filterPets = (pets) => {
-    return pets.filter( (pet) => {
+    return pets.filter((pet) => {
       let validator = {};
       validator.type = animalPropMatchesSelectVal(pet, "animal", $scope.types);
       if ($scope.ages.value !== "") {
-        validator.age = animalPropMatchesSelectVal(pet, "age", $scope.ages)
+        validator.age = animalPropMatchesSelectVal(pet, "age", $scope.ages);
       }
       if ($scope.sexes.value !== "") {
-        validator.sex = animalPropMatchesSelectVal(pet, "sex", $scope.sexes)
+        validator.sex = animalPropMatchesSelectVal(pet, "sex", $scope.sexes);
       }
       if ($scope.sizes.value !== "") {
-        validator.size = animalPropMatchesSelectVal(pet, "size", $scope.sizes)
+        validator.size = animalPropMatchesSelectVal(pet, "size", $scope.sizes);
       }
       return !Object.values(validator).includes(false);
     });
@@ -45,10 +45,10 @@ app.controller("SearchFormCtrl", function ($scope, $window, $location, PetFactor
 
   $scope.findPets = () => {
     PetFactory.getPetsFromPetfinder()
-    .then((pets) => {
-      $window.localStorage.setItem('pets', JSON.stringify(filterPets(pets)));
-      $location.path('/search/results');
-    });
+      .then((pets) => {
+        $window.localStorage.setItem('pets', JSON.stringify(filterPets(pets)));
+        $location.path('/search/results');
+      });
   };
 
 });

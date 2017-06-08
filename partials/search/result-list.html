@@ -1,24 +1,16 @@
-<!--<h4 class="search-heading">Displaying {{results.length}} Results</h4>
-    <div class="col s12 l12">
-      <ul>
-        <li ng-repeat="pet in results">
-          <div class="col s12 l4">
-            <div id={{pet.shelterPetId.$t}} ng-click="selectPet(pet.shelterPetId.$t)">
-              <div class="s10 offset-1 grey lighten-4 search-card">
-                <img class="search-result-img" ng-src="{{pet.media.photos.photo[3].$t}}">
-                <h5 class="search-pet-title">{{pet.name.$t}}</h5>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>-->
 
-<div class="search-results">
-  <div class="result" ng-repeat="result in results">
-    <div class="bg-test">
-      <img ng-src="{{result.media.photos.photo[3].$t}}">
-      <div class="result-nameplate">{{result.name.$t}}</div>
+<div class="results-container">
+  <div class="match-text">
+    <h4>Found {{results.length}} matches!</h4>
+  </div>
+
+  <div class="search-results">
+    <div class="result" ng-if="result.media.photos" ng-repeat="result in results">
+      <a class="bg-test" ng-href="./pet/{{result.id.$t}}">
+        <img ng-src="{{result.media.photos.photo[3].$t}}">
+        <div class="result-nameplate">{{result.name.$t}}</div>
+      </a>
     </div>
   </div>
+  <button class="btn waves-effect waves-light search-button button--lower" ng-click="backToSearch()">Back to Search</button>
 </div>

@@ -28,7 +28,8 @@
   align-items: center;
   justify-content: space-around;
 }
-.search-form button {
+
+.search-form button, .results-container button {
   display: initial;
   background-color: $main-orange;
 
@@ -38,7 +39,7 @@
 }
 
 .search-button:hover {
-    background-color: $lighter-orange;
+  background-color: $lighter-orange;
 }
 
 .search-form select {
@@ -53,19 +54,27 @@
 
 .search-results {
   margin-top: auto;
-  padding: 20px 0;
   display: flex;
   flex-flow: row wrap;
+  width: 80;
   justify-content: space-between;
+
+  @media only screen and (max-device-width: 700px) {
+    justify-content: center;
+  }
 }
 
 .result {
   display: flex;
   border-radius: 5px;
   flex-direction: column;
-  align-items: center;
   padding: 20px;
-  flex: 1 1 30%;
+  flex: 0 0 30%;
+
+  @media only screen and (max-device-width: 700px) {
+    flex: 0 0 80%;
+  }
+
 }
 
 .bg-test {
@@ -82,10 +91,30 @@
 }
 
 .result-nameplate {
-  border: 2px solid $main-orange;
+  border-top: 2px solid $main-orange;
   width: 100%;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   background-color: $lighter-orange;
   color: black;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.match-text {
+  background-color: $background-blue;
+  color: white;
+}
+
+.search-button {
+  width: 70%;
+  align-self: center;
+}
+
+.button--lower {
+  margin-bottom: 20px;
 }

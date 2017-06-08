@@ -1,13 +1,9 @@
-app.controller('SearchResultsCtrl', function($scope, $window){
+"use strict";
 
+app.controller('SearchResultsCtrl', function($scope, $window, $location){
 
-  $scope.selectPet = function(id) {
-    $scope.animalsToDisplay.forEach(function(pet) {
-      if (pet.shelterPetId.$t === id) {
-        $rootScope.selectedPet = [];
-        $rootScope.selectedPet.push(pet);
-      }
-    });
+  $scope.backToSearch = () => {
+    $location.path('/search');
   };
 
   $scope.listPets = () => {
