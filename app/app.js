@@ -12,6 +12,10 @@ app.config(function($routeProvider, $locationProvider) {
     templateUrl: 'partials/search/result-list.html',
     controller: 'SearchResultsCtrl'
   }).
+  when('/pet/:id', {
+    templateUrl: 'partials/search/result-detail.html',
+    controller: 'SearchDetailCtrl'
+  }).
   when('/services', {
     templateUrl: 'partials/info/info-services.html',
     controller: 'ServicesCtrl'
