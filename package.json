@@ -22,7 +22,8 @@
     "jshint-stylish": "^2.2.1",
     "materialize-css": "^0.98.2",
     "node-sass": "^4.5.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "request": "^2.81.0"
   },
   "devDependencies": {},
   "scripts": {
