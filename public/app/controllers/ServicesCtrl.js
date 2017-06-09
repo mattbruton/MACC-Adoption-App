@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ServicesCtrl", function($scope) {
+app.controller("ServicesCtrl", ['$scope', function($scope) {
 
   $scope.collapsibleElements = [{
     title: 'Adoption Fees',
@@ -30,4 +30,4 @@ app.controller("ServicesCtrl", function($scope) {
     text4: 'MACC recently made a change to the annual low-cost rabies vaccination clinics and now hosts a monthly rabies vaccination clinic the third Saturday of each month at the shelter from February-November in 2016. MACC is pleased to announce additional local veterinarians will be hosting low-cost rabies clinics. Cost: $10.'
   }];
 
-});
+}]);

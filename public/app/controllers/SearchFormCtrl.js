@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("SearchFormCtrl", function ($scope, $window, $location, PetFactory) {
+app.controller("SearchFormCtrl", ['$scope', '$window', '$location', 'PetFactory', function ($scope, $window, $location, PetFactory) {
 
   $scope.types = {
     value: "",
@@ -50,5 +50,4 @@ app.controller("SearchFormCtrl", function ($scope, $window, $location, PetFactor
         $location.path('/search/results');
       });
   };
-
-});
+}]);

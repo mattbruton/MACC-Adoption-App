@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('SearchResultsCtrl', function($scope, $window, $location){
+app.controller('SearchResultsCtrl', ['$scope', '$window', '$location', function ($scope, $window, $location) {
 
   $scope.backToSearch = () => {
     $location.path('/search');
@@ -8,9 +8,7 @@ app.controller('SearchResultsCtrl', function($scope, $window, $location){
 
   $scope.listPets = () => {
     $scope.results = JSON.parse($window.localStorage.getItem('pets'));
-    console.log($scope.results);
   };
-  
-  $scope.listPets();
 
-});
+  $scope.listPets();
+}]);

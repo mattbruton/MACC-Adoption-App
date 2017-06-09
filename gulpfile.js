@@ -10,7 +10,7 @@ var gutil = require('gulp-util');
 gulp.task('default', ['lint', 'sass', 'watch']);
 
 gulp.task('lint', function() {
-  return gulp.src(['../app/**/*.js'])
+  return gulp.src(['./public/app/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .on('error', function() {}
@@ -18,7 +18,7 @@ gulp.task('lint', function() {
 });
 
 gulp.task('sass', function() {
-  return gulp.src('../sass/*.scss')
+  return gulp.src('./public/sass/*.scss')
     // sourcemaps + sass + error handling
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -36,12 +36,12 @@ gulp.task('sass', function() {
     }))
     // write sourcemaps to a specific directory
     // give it a file and save
-    .pipe(gulp.dest('../styles'));
+    .pipe(gulp.dest('./public/styles'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['../app/**/*.js'], ['lint']);
-  gulp.watch('../sass/**/*.scss', ['sass']);
+  gulp.watch(['./public/app/**/*.js'], ['lint']);
+  gulp.watch('./public/sass/**/*.scss', ['sass']);
 
   gutil.log(gutil.colors.bgGreen('Watching for changes...'));
 });

@@ -2,7 +2,7 @@
 
 var app = angular.module('MaccAdopt', ['ngRoute', 'ngCookies']);
 
-app.config(function($routeProvider, $locationProvider) {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.
   when('/', {
     templateUrl: 'partials/search/search-form.html',
@@ -12,7 +12,7 @@ app.config(function($routeProvider, $locationProvider) {
     templateUrl: 'partials/search/result-list.html',
     controller: 'SearchResultsCtrl'
   }).
-  when('/pet/:id', {
+  when('/pets/:id', {
     templateUrl: 'partials/search/result-detail.html',
     controller: 'SearchDetailCtrl'
   }).
@@ -23,4 +23,4 @@ app.config(function($routeProvider, $locationProvider) {
   otherwise('/');
   
   $locationProvider.html5Mode(true);
-});
+}]);
