@@ -14,6 +14,7 @@ app.controller("SearchDetailCtrl",['$scope', '$routeParams', 'PetFactory', funct
 
   $scope.loadPet().then((pet) => {
     $scope.pet = pet;
+    $scope.pet.fbUrl = `https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpeaceful-refuge-13916.herokuapp.com%2Fpets%2F${$scope.pet.id.$t}&amp;src=sdkpreparse`;
     $scope.$apply();
   });
 }]);
