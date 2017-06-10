@@ -23,5 +23,5 @@ app.get('*', (req, res, next) => {
   res.status(200).sendFile(path.join(__dirname+'/public/index.html')); 
 });
 
-app.listen(8080);
-console.log('listening on port 8080');
+app.listen(process.env.port);
+console.log(`listening on port ${process.env.port}`);
