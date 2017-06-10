@@ -1,0 +1,71 @@
+@import "../abstracts/variables";
+
+nav {
+  display: flex;
+  height: 6.5rem;
+  justify-content: space-between;
+  background-color: $nav-grey;
+  border-bottom: 5px solid $background-blue;
+
+  @media only screen and (max-device-width: 450px) {
+    justify-content: center;
+  }
+}
+
+.nav-logo {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    padding: 0px 20px;
+    max-height: 5.5rem;
+    
+    @media only screen and (max-device-width: 450px) {
+      padding: 0;
+    }
+  }
+}
+
+.nav-links--default {
+  display:flex;
+  align-items: flex-end;
+  padding-right: 1rem;
+
+  @media only screen and (max-device-width: 450px) {
+    display: none;
+  }
+}
+
+.nav-link {
+  color: $main-orange;
+  font-size: 1.25rem;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  line-height: 2.25em;
+  margin: 0 5px;
+
+  &:hover {
+    color: $nav-grey;
+    background-color: $main-orange;
+  }
+}
+
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  
+  height: 50px;
+  font-size: 2.25rem;
+  padding: 10px;
+  border: 3px solid $background-blue;
+  border-radius: 10px;
+  color: $main-orange;
+}
+
+.fa, .fa-bars {
+  font: normal normal normal 14px/1.75 FontAwesome;
+  font-size: inherit;
+}
