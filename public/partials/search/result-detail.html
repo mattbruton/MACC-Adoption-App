@@ -10,16 +10,8 @@
     <p ng-if="pet.animal.$t === 'Dog' && pet.breeds.breed[0].$t"><strong>Breed: </strong>{{pet.breeds.breed[0].$t}}</p>
     <p><strong>Last Updated: </strong>{{formatDate(pet.lastUpdate.$t)}}</p>
     <h5>Share</h5>
-
-    
-
-    <div class="fb-share-button" data-href="https://placeholder.com/pets/37994109" data-layout="button_count" data-size="small" data-mobile-iframe="true">
-      <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fplaceholder.com%2Fpets%2F37994109&amp;src=sdkpreparse">
-        <i class="fa fa-facebook-official" aria-hidden="true"></i>
-      </a>
-    </div>
-    <!--<p ng-if="!pet.description.$t">My biography isn't complete yet, but if you want to know more about me, come visit!</p>
-    <p ng-else>{{pet.description.$t}}</p>-->
-    
+    <a href={{pet.fbUrl}}>
+      <i class="fa fa-facebook-official" aria-hidden="true"></i>
+    </a>
   </div>
 </div>
