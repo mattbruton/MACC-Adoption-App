@@ -1,15 +1,15 @@
 "use strict";
 
-app.factory("PetFactory", ['$q', '$http', function ($q, $http) {
+app.factory("PetFactory", ['$http', function ($http) {
 
   const getPetsFromPetfinder = () => {
     return $http.get("./api/pets")
-      .then((pets) => {
-        return pets.data.pet;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    .then((pets) => {
+      return pets.data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   };
 
   const getSinglePetFromPetfinder = (petId) => {

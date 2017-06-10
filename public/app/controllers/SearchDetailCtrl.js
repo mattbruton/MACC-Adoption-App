@@ -8,6 +8,10 @@ app.controller("SearchDetailCtrl",['$scope', '$routeParams', 'PetFactory', funct
     });
   };
 
+  $scope.formatDate = (date) => {
+    return new Date(date).toLocaleDateString(); 
+  };
+
   $scope.loadPet().then((pet) => {
     $scope.pet = pet;
     $scope.$apply();

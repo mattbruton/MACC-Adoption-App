@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module('MaccAdopt', ['ngRoute', 'ngCookies']);
+var app = angular.module('MaccAdopt', ['ngRoute']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.
@@ -15,10 +15,6 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   when('/pets/:id', {
     templateUrl: 'partials/search/result-detail.html',
     controller: 'SearchDetailCtrl'
-  }).
-  when('/services', {
-    templateUrl: 'partials/info/info-services.html',
-    controller: 'ServicesCtrl'
   }).
   otherwise('/');
   

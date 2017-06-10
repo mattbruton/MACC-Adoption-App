@@ -14,7 +14,7 @@ app.get('/api/pets', (req, res, next) => {
   request(url, (err, resp, body) => {
     if (res.statusCode === 200) {
       let pets = JSON.parse(body);
-      res.send(pets.petfinder.pets);
+      res.send(pets.petfinder.pets.pet);
     }
   });
 });

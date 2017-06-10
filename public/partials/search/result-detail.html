@@ -1,8 +1,19 @@
 <div class="detail__container">
   <div class="detail__profile">
-    <div class="bg-test">
-        <img ng-src="{{pet.media.photos.photo[3].$t}}">
-        <div class="result-nameplate">{{pet.name.$t}}</div>
-      </div>
+    <img class="detail__image" ng-src="{{pet.media.photos.photo[2].$t}}">
+  </div>
+  <div class="detail__info">
+    <h5>About Me</h5>
+    <p><strong>Name:</strong> {{pet.name.$t}}</p>
+    <p><strong>Shelter ID:</strong> {{pet.id.$t}}</p>
+    <p ng-if="pet.animal.$t === 'Cat'"><strong>Breed: </strong>{{pet.breeds.breed.$t}}</p>
+    <p ng-if="pet.animal.$t === 'Dog' && pet.breeds.breed[0].$t"><strong>Breed: </strong>{{pet.breeds.breed[0].$t}}</p>
+    <p><strong>Last Updated: </strong>{{formatDate(pet.lastUpdate.$t)}}</p>
+    <h5>Share</h5>
+
+    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+    <!--<p ng-if="!pet.description.$t">My biography isn't complete yet, but if you want to know more about me, come visit!</p>
+    <p ng-else>{{pet.description.$t}}</p>-->
+    
   </div>
 </div>
