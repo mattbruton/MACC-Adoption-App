@@ -20,7 +20,7 @@ This project was used as my Front-end Capstone at Nashville Software School. Goa
 
 ### To View Hosted Project
 
-[Unofficial MACC Adoption App](https://mb-nss-exercises.firebaseapp.com/MACC/)
+[Unofficial MACC Adoption App](https://peaceful-refuge-13916.herokuapp.com/)
 
 ### Installation
 
