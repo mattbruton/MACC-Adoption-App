@@ -76,8 +76,6 @@ You should now be able to open your browser and type `localhost:8080` to view th
 
 ==============================
 
-1. E-mail service no longer working correctly in hosted project, need to investigate and correct issue.
-1. Styling is inconsistant across certain devices and browser resolutions.
-1. Search button in navigation doesn't work as expected if currently searching pets. (Should refresh page)
+1. Need to update readme to reflect recent changes/correct issues on how to run locally.
 
 ==============================
